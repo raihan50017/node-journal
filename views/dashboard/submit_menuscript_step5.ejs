@@ -1,0 +1,142 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div style="border-radius: 0px;" class="card">
+                    <div style="border-radius: 0px;" class="card-header text-left">
+                        <h6 class="m-0 py-1 fw-bold">New Menuscript Submission</h6>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <div class="card border-0">
+                        <!-- form start -->
+                        <div class="card-body">
+                            <div class="d-flex border-bottom mb-3 pb-2">
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-50"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">1</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Menuscript Information</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-100"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">2</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Author Information</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-100"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">3</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Suggest Reviewers</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-100"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">4</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Upload Files</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-50"
+                                            style="position:absolute; top:15px; border-top:2px solid green;left:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">5</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Confirmation</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="m-0 fw-bold">
+                                        <%= article.article_title %>
+                                    </h5>
+                                    <p class="m-0">
+                                        <% for(let i = 0; i < article.authors.length; i++) { %>
+                                                <%= article.authors[i].author_name; %>
+                                                <% if(i != article.authors.length - 1) {%>,
+                                            <% }}; %>
+                                    </p>
+                                    <p class="m-0 pt-2 fw-bold">Abstract</p>
+                                    <p style="text-align: justify;" class="m-0">
+                                        <%= article.abstract %>
+                                    </p>
+                                    <p class="m-0 pt-2 fw-bold">Keyword</p>
+                                    <p class="m-0">
+                                        <%= article.keywords %>
+                                    </p>
+                                    <p class="m-0 pt-2 fw-bold">Manuscript</p>
+                                    <a href="/static/uploads/<%= article.menuscript %>" target="_blank"
+                                        class="btn btn-success btn-sm"><i class="fa fa-eye"></i> view</a>
+                                </div>
+                                <!-- <div class="col-md-2">
+                            <img alt="" class="w-100" src="http://journal.ascrdi.com/images/Governance.png">
+                            <p class="text-center font-weight-bold m-0 pt-2">Editor</p>
+                            <p class="text-center m-0">Rahman</p>
+                        </div> -->
+                            </div>
+                        </div>
+                        <form action="/v1/dashboard/submit_menuscript_step5?article_id=<%= article._id %>"
+                            method="post">
+                            <div class="card-footer w-100">
+                                <a href="/v1/dashboard/submit_menuscript_step4?article_id=<%= article._id %>"
+                                    type="submit" class="btn btn-primary btn-sm"><i class="fa fa-angle-double-left"></i>
+                                    Previous step</a>
+                                <button type="submit" class="btn btn-primary btn-sm">Confirm Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.card -->
+                <!--/.col (right) -->
+            </div>
+        </div>
+        <%- include('common/footer'); %>

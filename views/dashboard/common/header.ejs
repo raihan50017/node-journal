@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/dashboard-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="node_modules/froala-editor/css/froala_editor.pkgd.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid">
+        <nav>
+            <div class="row align-items-center journal-navbar p-2">
+                <div style="width:20%;" class="fw-bold fs-6 d-flex align-items-center">
+                    <button style="border: none;" class="d-block d-md-none" style="cursor: pointer; color:brown;"
+                        class="fs-5 ms-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        aria-controls="offcanvasExample"><i class="fa fa-bars"></i></button>
+                    <span class="d-none d-md-block">ROLE: <span class="text-uppercase"><%= authRole %></span></span>
+                </div>
+                <div style="width:80%;">
+                    <div class="d-flex align-items-center h-100">
+                        <a href="/v1/"><img class="journal-nabvar-logo d-none d-md-block" alt="logo" src="/static/images/logo.png"></a>
+                        <p class="m-0 fs-5 ms-2 fw-bold">JOURNAL OF NAZRUL UNIVERSITY </p>
+                        <div class="ms-auto journal-header-user dropdown">
+                            <p class="d-flex align-items-center m-0" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                aria-expanded="false" class="m-0">
+                                <span class="d-md-block d-none me-1"><%= user.name %></span><img
+                                    class="journal-header-avatar border"
+                                    src="/static/images/logo.png"
+                                    alt="avatar">
+                            </p>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li class="border-bottom"><a class="dropdown-item" href="#"><i class="fa fa-wrench"></i>
+                                        Change Password</a></li>
+                                <li class="border-bottom"><a class="dropdown-item" href="#"><i class="fa fa-gears"></i>
+                                        Edit Profile</a></li>
+                                <li><a href="/v1/auth/logout" class="dropdown-item" href="#"><i
+                                            class="fa fa-arrow-circle-left"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- mobile menu -->
+        <div class="offcanvas offcanvas-start w-75" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div style="border-bottom: 1px solid brown;" class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+
+                </h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="bg-white p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">New Submission</a>
+                    <a href="/v1/dashboard/submit_new_menuscript"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submit New Menuscript</a>
+                    <a href="/v1/dashboard/incomplete_menuscript"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Incomplete Submission <span
+                            class="text-danger">(2)</span></a>
+                    <a href="/v1/dashboard/author_submission_under_review"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission Under Review
+                        (3)</a>
+                </div>
+                <div class="bg-white mt-2 p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Revision</a>
+                    <a href="/v1/dashboard/author_revision_needed"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Revision needed <span
+                            class="text-danger">(2)</span></a>
+                    <a href="/v1/dashboard/author_revision_being_processed"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Revision Being Processed
+                        (2)</a>
+                    <a class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Final Decisions (3)</a>
+                </div>
+                <div class="bg-white mt-2 p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Previous Submissions</a>
+                    <a href="/v1/dashboard/author_revision_needed"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Previous Submission <span
+                            class="text-danger">(2)</span></a>
+                </div>
+
+                <div class="bg-white p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Review Assignments</a>
+                    <a href="/v1/dashboard/new_reviewer_invitation"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">New Reviewer Inviations <span
+                            class="text-danger">(2)</span></a>
+                    <a href="/v1/dashboard/reviewer_pending_assignments"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Pending Assignments <span
+                            class="text-danger">(2)</span></a>
+                </div>
+                <div class="bg-white mt-2 p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Statistics</a>
+                    <a href="/v1/dashboard/reviewer_completed_assignment"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Completed Assignments <span
+                            class="text-success">(2)</span></a>
+                </div>
+
+                <div class="bg-white p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Pending Assignments (10)</a>
+                    <a href="/v1/dashboard/editor-new-assignments"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">New assignmets (2)</a>
+                    <a href="/v1/dashboard/editor_required_review_completed"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Required Review Completed
+                        <span class="text-danger">(2)</span></a>
+                    <a href="/v1/dashboard/editor_require_additional_reviewer"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Require Additional Reviewer
+                        (3)</a>
+                    <a href="/v1/dashboard/editor_submission_with_late_review"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission With Late Review
+                        <span class="text-success">(2)</span></a>
+                </div>
+                <div class="bg-white mt-2 p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Review in Progress(4)</a>
+                    <a href="/v1/dashboard/editor_reviewer_no_response"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Reviewer no Response <span
+                            class="text-danger">(2)</span></a>
+                    <a href="/v1/dashboard/editor_submission_under_review"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission Under Review
+                        (2)</a>
+                </div>
+                <div class="bg-white mt-2 p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">All Assigned Submissions(3)</a>
+                    <a href="/v1/dashboard/editor_all_assigned_submission"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">All Assigned Submission <span
+                            class="text-danger">(2)</span></a>
+                    <a href="/v1/dashboard/editor_submission_being_edited"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission Being Edited <span
+                            class="text-danger">(2)</span></a>
+                </div>
+            </div>
+        </div>

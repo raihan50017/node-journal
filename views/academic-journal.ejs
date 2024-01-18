@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('components/includes'); %>
+        <title>journal</title>
+</head>
+
+<body>
+    <%- include('components/topnav'); %>
+        <%- include('components/navbar'); %>
+            <!-- body -->
+            <div>
+                <div style="min-height: 100vh;" class="bg-white container-fluid">
+                    <!-- START: JOURNAL -->
+                    <div class="p-3">
+                        <h4 class="fw-bold px-3 py-2 text-left bg-white">All Journals</h4>
+                        <div class="row mt-4">
+
+                            <% for(let i=0; i<journals.length; i++) { %>
+                            <div class="col-md-4">
+                                <a style="color: inherit;" href="journal/<%= journals[i].slug %>">
+                                    <div class="journal-card h-100">
+                                        <div class="p-3 d-flex shadow">
+                                            <img style="width: 35%;" src="static/images/Nazrul.jpg" alt="">
+                                            <div style="width:65%" class="ms-3">
+                                                <div class="d-flex h-100 flex-column justify-content-between">
+                                                    <div>
+                                                        <h5 style="font-size: 16px;" class="fw-bold"><%= journals[i].title %></h5>
+                                                        <p style="font-size: 14px;" class="m-0 p-0">E-ISSN: <%= journals[i].e_issn %></p>
+                                                        <p style="font-size: 14px;" class="m-0 p-0">P-ISSN: <%= journals[i].p_issn %></p>
+                                                        <p style="font-size: 14px;" class="m-0 p-0">Publiction
+                                                            Frequency: Monthly</p>
+                                                    </div>
+                                                    <div>
+                                                        <hr class="mb-1">
+                                                        <p class="m-0 p-0">Impact Factor: 1.11</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <% } %>
+        
+                        </div>
+                    </div>
+                    <!-- END: JOURNAL -->
+                </div>
+            </div>
+            </div>
+            </div>
+            <%- include('components/footer'); %>
+                <!-- body -->
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en'
+                        }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript"
+                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+                <script src="js/jquery-3.3.1.min.js"></script>
+                <!-- <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script> -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                    crossorigin="anonymous"></script>
+                <script src="js/jquery.sticky.js"></script>
+                <script src="js/main.js"></script>
+</body>
+
+</html>

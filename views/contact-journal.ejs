@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('components/includes'); %>
+        <title>journal</title>
+</head>
+
+<body>
+    <%- include('components/navbar-2'); %>
+        <%- include('components/banner'); %>
+            <!-- body -->
+            <div class="container-fluid bg-light p-4">
+                <div class="mt-0">
+                    <div class="row">
+                        <div class="col-md-3 d-none d-md-block">
+                            <div class="bg-white shadow-sm p-3 mb-3">
+                                <!-- <h5 class="text-start">jkkniu Official Journal</h5> -->
+                                <a style="background-color: #001C54;color:white; border:1px solid #001C54; font-size: 14px;"
+                                    href="" class="btn btn-outline-success w-100 p-1 submit-to-btn">Submit to JOF</a>
+                                <a href="" style="font-size: 14px;" class="btn btn-success w-100 mt-2 p-1">Review for
+                                    JOF</a>
+                                <div class="mt-2 d-flex justify-content-between">
+                                    <a class="btn btn-outline-success py-1 px-2"><i class="icon-twitter"></i></a><a
+                                        class="btn btn-outline-success py-1 ms-1"><i class="icon-facebook"></i></a><a
+                                        style="font-size: 14px;"
+                                        class="btn btn-outline-success py-1 ms-1 w-100">Share</i></a>
+                                </div>
+                            </div>
+                            <%- include('components/left_journal_menu_card'); %>
+                                <%- include('components/new_anouncement_card'); %>
+                        </div>
+                        <div class="col-md-9">
+                            <!-- <h3 style="background-color: rgba(0,0,0,.02);" class="fs-4 text-center article-title fw-bold border px-2 py-3">Journal of Governance and Development</h3> -->
+                            <h4 style="background-color:#001C54" class="text-start text-white p-2 m-0">Contact Journal
+                            </h4>
+                            <div class="px-2 py-2 bg-white shadow-sm">
+                                <div class="row">
+                                    <!-- <div class="col-md-2 text-center">
+                                <img class="mb-3" style="width:100%" alt="" src="images/Governance.png">
+                                <h6 class="fw-bold">Editor</h6>
+                                <p style="color: black;">Azizur Rahman</p> -->
+                                    <!-- <h6 class="fw-bold">Associate Editor</h6>
+                                <p style="color: black;">Gazi Arafat Uz-Zaman Markony<br>
+                                    Tanjil Ahmed</p>
+                                <h6 class="fw-bold">Member</h6>
+                                <p style="color: black;">Shanjay Kumar Mukharjee<br>
+                                    Md. Nure Alam</p> -->
+                                    <!-- </div> -->
+                                    <div class="col-md-12 border-left">
+                                        <div style="background-color: rgba(0,0,0,.03);" class="p-2 border">
+                                            <h6 class="fw-bold">Editor</h6>
+                                            <p>Journal of Governance and Development</p>
+                                            <p>Jatiya Kabi Kazi Nazrul Islam University</p>
+                                            <p>Trishal, Mymensingh, Bangladesh</p>Email:
+                                            <a style="text-decoration: underline;"
+                                                href="mailto:editor@nazruluniversityjournal.com">editor@nazruluniversityjournal.com</a><br>
+                                            <br>
+                                            <a style="color: brown;text-decoration: underline;" href="#">Rules for
+                                                sending articles to Journal of Governance and Development</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('components/footer'); %>
+</body>
+
+</html>

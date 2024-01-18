@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/dashboard-v2/dist/css/custom/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav style="background-color: #002147;" class="p-3">
+        <div class="d-flex">
+            <a class="p-2 text-white" href="/">Home</a>
+            <a class="p-2 text-white" href="">Contact</a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 mb-5">
+                <div class="card shadow">
+                    <div style="border-bottom: 2px solid #002147;background-color:#002147; color:white;"
+                        class="card-header text-dark">
+                        <h4 class="text-white">Register</h4>
+                    </div>
+                    <form action="/v1/auth/registration" method="post">
+                        <div class="card-body">
+                            <div class="form-group mb-2">
+                                
+                                <label for="journal_id">Choose Journal</label>
+                                <select name="journal_id" class="form-select form-select-sm" required>
+                                    <option>-Select Journal-</option>
+                                    <% journals.forEach(function(journal){ %>
+                                        <option value="<%= journal._id %>">
+                                            <%= journal.title %>
+                                        </option>
+                                        <% }); %>
+                                </select>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input name="name" type="text" class="form-control form-control-sm"
+                                    id="exampleInputEmail1" placeholder="name">
+                            </div>
+
+                            <div class="form-group mb-2">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input name="email" type="text" class="form-control form-control-sm"
+                                    id="exampleInputEmail1" placeholder="email">
+                            </div>
+
+                            <div class="form-group mb-2">
+                                <label for="exampleInputEmail1">Affiliation</label>
+                                <input name="affiliation" type="text" class="form-control form-control-sm"
+                                    id="exampleInputEmail1" placeholder="afiliation">
+                            </div>
+
+                            <!-- <div class="form-group mb-2">
+                                <label for="exampleInputEmail1">Category</label>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option>Select</option>
+                                    <option>Science</option>
+                                    <option>Agriculture</option>
+                                    <option>Administrative Sciences</option>
+                                    <option>Acoustics</option>
+                                </select>
+                            </div> -->
+
+                            <div class="form-group mb-2">
+                                <label for="exampleInputEmail1">Passsword</label>
+                                <input name="password" type="password" class="form-control form-control-sm"
+                                    id="exampleInputEmail1" placeholder="password">
+                            </div>
+
+                            <div class="form-group mb-2">
+                                <label for="exampleInputEmail1">Confirm Password</label>
+                                <input name="confirm_password" type="password" class="form-control form-control-sm"
+                                    id="exampleInputEmail1" placeholder="confirm password">
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">I accept all terms &
+                                    conditions</label>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer d-flex justify-content-between w-100">
+                            <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                            <span>Already have acclount?<a href="login"> Login now</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

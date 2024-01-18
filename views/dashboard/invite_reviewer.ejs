@@ -1,0 +1,200 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="bg-white shadow-sm p-2 mb-4">
+            <p class="p-0 py-1 m-0 fw-bold"><a href="/v1/dashboard/editor-new-assignments">New Assignments</a> <i
+                    class="fa fa-angle-right fs-6 fw-bold"></i> <span class="text-danger">Invite reviewers</span></p>
+            <div>
+                <div>
+                    <h6 class="fw-bold text-start m-0 text-center p-2">Invite Reviewer for <span
+                            class="text-success m-0">MANUSCRIPT ID: <%= article.manuscript_id %></span></h6>
+                </div>
+                <div>
+                    <p style="border-bottom: 1px solid #002147; border-top:1px solid #002147;"
+                        class="text-center m-0 p-2 fw-bold bg-light">Partially Overlapping Channel Assignment under
+                        Coexistence of Bonded and Non-Bonded Channels.</p>
+                    <div class="border position-relative p-0 mb-4 mt-4">
+                        <p style="top:-15px;" class="position-absolute m-0 p-0 bg-white px-2 mx-3 text-danger fw-bold">
+                            Default Reviwer Settings</p>
+                        <div class="bg-light">
+                            <table class="border-0 w-100 mt-3">
+                                <tr>
+                                    <td class="p-2">The submission will move to Required Review Completed folder if
+                                        <span class="text-danger">2 reviews</span> completed.
+                                    </td>
+                                    <td class="p-2 text-center">
+                                        <a data-bs-toggle="modal" data-bs-target="#change" href="">Change</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">Automatically uninvite reviwers who do not respond to an invitation
+                                        whithin <span class="text-danger">14 days.</span></td>
+                                    <td class="p-2 w-25 text-center">
+                                        <a data-bs-toggle="modal" data-bs-target="#change" href="">Change</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">Automatically unassign reviwers who do not complete review within
+                                        <span class="text-danger">0</span> day of review due date.
+                                    </td>
+                                    <td class="p-2 w-25 text-center">
+                                        <a data-bs-toggle="modal" data-bs-target="#change" href="">Change</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- create reviewer modal -->
+                    <div class="modal fade" id="createReviewer" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md shadow">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Create Reviewer</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/v1/user/reviewer?article_id=<%= article._id %>" method="post">
+                                        <input type="hidden" name="role" value="reviewer">
+                                        <input type="hidden" name="journal_id" value="<%= journal_id %>">
+                                        <input class="form-control my-2" type="text" name="name" id=""
+                                            placeholder="Name" required>
+                                        <input class="form-control my-2" type="email" name="email" id=""
+                                            placeholder="Email" required>
+                                        <input class="form-control my-2" type="password" name="password" id=""
+                                            placeholder="Password" required>
+
+                                        <div class="py-2">
+                                            <button class="btn btn-success" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border position-relative p-0 mb-2">
+                        <p style="top:-15px;" class="position-absolute m-0 p-0 bg-white px-2 mx-3 text-success fw-bold">
+                            Reviewer Search</p>
+                        <div class="p-2 mt-3">
+                            <div class="pb-2 text-end"><button class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#createReviewer">Create New
+                                    Reviewer</button></div>
+                            <form action="">
+                                <div class="row align-items-center">
+                                    <div class="col-md-3">
+                                        <p class="text-center m-0">SEARCH</p>
+                                    </div>
+                                    <input type="hidden" name="article_id" value="<%= article._id %>">
+                                    <div class="col-md-3 text-center">
+                                        <select name="search" class="form-select form-select-sm w-auto"
+                                            aria-label="Default select example" required>
+                                            <option value="" selected>Search by section</option>
+                                            <option value="reviewer">Search by Reviewers</option>
+                                            <option value="author">Search by Authors</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p class="m-0 text-center">FROM</p>
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        <select class="form-select form-select-sm w-auto"
+                                            aria-label="Default select example">
+                                            <option selected>All Reviewers</option>
+                                            <option value="1">All Editor</option>
+                                            <option value="2">Entire Database</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-outline-success btn-sm px-5" type="submit">Search <i
+                                            class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <% if(locals.reviewers.length) { %>
+                            <form action="/v1/dashboard/selected_reviewer" method="post">
+                                <input type="hidden" name="article_id" value="<%= article._id %>">
+                                <p class="p-2 text-center fw-bold mt-2 m-0">Reviewer Candidate</p>
+                                <div class="table-responsive">
+                                    <table class="w-100 custom-table">
+                                        <thead>
+                                            <tr>
+                                                <td class="custom-table-head p-2">Select</td>
+                                                <td class="custom-table-head p-2 border-start text-center">Reviewer Name
+                                                </td>
+                                                <td class="text-center custom-table-head p-2 border-start">Editor</td>
+                                                <td class="text-center custom-table-head p-2 border-start">Section</td>
+                                                <td class="text-start custom-table-head p-2 border-start">Reviewer
+                                                    Statistics</td>
+                                                <td class="text-start custom-table-head p-2 border-start">Invitation
+                                                    Statistics</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% reviewers.forEach(function(reviewer){ %>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <div class="form-check text-center">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                name="selected_reviewers" value="<%= reviewer._id %>"
+                                                                id="flexCheckDefault">
+                                                        </div>
+                                                    </td>
+                                                    <td class="border-start p-2 text-center">
+                                                        <%= reviewer.name %>
+                                                    </td>
+                                                    <td class="border-start p-2">
+                                                        <%= reviewer.isEditor %>
+                                                    </td>
+                                                    <td class="p-2 border-start text-center">Networking</td>
+                                                    <td class="p-2 border-start text-start">
+                                                        <table class="border-0 w-100">
+                                                            <tr class="border-0">
+                                                                <td>Review in Progress</td>
+                                                                <td><span class="text-danger">2</span></td>
+                                                            </tr>
+                                                            <tr class="border-0">
+                                                                <td>completed Review </td>
+                                                                <td><span class="text-success">2</span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td class="p-2 border-start text-start">
+                                                        <table class="border-0 w-100">
+                                                            <tr class="border-0">
+                                                                <td>Aggreed</td>
+                                                                <td><span class="text-success">2</span></td>
+                                                            </tr>
+                                                            <tr class="border-0">
+                                                                <td> Denied</td>
+                                                                <td><span class="text-success">2</span></td>
+                                                            </tr>
+                                                            <tr class="border-0">
+                                                                <td>Total invitation</td>
+                                                                <td><span class="text-success">4</span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <%})%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit"
+                                        class="btn btn-outline-success btn-sm mt-3 px-5">Proceed</button>
+                                </div>
+                            </form>
+
+                            <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('common/footer'); %>

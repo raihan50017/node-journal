@@ -1,0 +1,306 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div style="border-radius: 0px;" class="card card-success shadow-sm">
+                    <div style="border-radius: 0px;" class="card-header">
+                        <h6 class="fw-bold m-0 py-1">New Menuscript Submission</h6>
+                    </div>
+                    <!-- <form action="/v1/dashboard/submit_new_menuscript" method="post"> -->
+                    <div class="card-body">
+                        <div class="d-flex border-bottom mb-3 pb-2">
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-50"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">1</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Menuscript Information</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-100"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">2</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Author Information</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-100"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">3</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Suggest Reviewers</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-100"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">4</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Upload Files</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-50"
+                                        style="position:absolute; top:15px; border-top:2px solid green;left:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">5</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Confirmation</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="d-none d-md-block"
+                            action="/v1/dashboard/submit_new_menuscript?article_id=<%= article._id %>" method="post">
+                            <table style="white-space: nowrap;" class="w-100 d-none d-md-block">
+                                <tbody>
+                                    <!-- <tr class="mt-2">
+                                        <td class="pe-2">
+                                            <label>Choose Journal</label>
+                                        </td>
+                                        <td class="w-100">
+                                            <select name="journal_id" class="form-select form-select-sm">
+                                                <option>Select</option>
+                                                <% if(article.journal_id) { %>
+                                                    <option value="<%= article.journal_id %>" selected>
+                                                        <%= article.journal_id %>
+                                                    </option>
+                                                    <% } %>
+                                                        <% journals.forEach(function(journal){ %>
+                                                            <option value="<%= journal._id %>">
+                                                                <%= journal.title %>
+                                                            </option>
+                                                            <% }); %>
+                                            </select>
+                                        </td>
+                                    </tr> -->
+                                    <tr>
+                                        <td class="p-1"></td>
+                                        <td class="p-1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pe-2">
+                                            <label>Section</label>
+                                        </td>
+                                        <td class="w-100">
+                                            <select name="section" class="form-select form-select-sm">
+                                                <option>Select</option>
+
+                                                <% if(article.section) { %>
+                                                    <option value="<%= article.section %>" selected>
+                                                        <%= article.section %>
+                                                    </option>
+                                                    <% } %>
+                                                        <option value="all">All</option>
+                                                        <option value="science">Science</option>
+                                                        <option value="agriculture">Agriculture</option>
+                                                        <option value="administrative">Administrative Sciences</option>
+                                                        <option value="acoustics">Acoustics</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-1"></td>
+                                        <td class="p-1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pe-2">
+                                            <label>Journal Type</label>
+                                        </td>
+                                        <td class="w-100">
+                                            <select name="journal_type" class="form-select form-select-sm">
+                                                <option>Select</option>
+                                                <% if(article.section) { %>
+                                                    <option value="<%= article.journal_type %>" selected>
+                                                        <%= article.journal_type %>
+                                                    </option>
+                                                    <% } %>
+                                                        <option value="all">All</option>
+                                                        <option value="science">Science</option>
+                                                        <option value="agriculture">Agriculture</option>
+                                                        <option value="administrative">Administrative Sciences</option>
+                                                        <option value="acoustics">Acoustics</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-1"></td>
+                                        <td class="p-1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pe-2">
+                                            <label for="exampleInputEmail1">Article Title</label>
+                                        </td>
+                                        <td class="w-100">
+                                            <input name="article_title" type="text" class="form-control form-control-sm"
+                                                id="exampleInputEmail1" value="<%= article.article_title %>"
+                                                placeholder="Article Title">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-1"></td>
+                                        <td class="p-1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: top;" class="pe-2">
+                                            <label>Abstact</label>
+                                        </td>
+                                        <td class="w-100">
+                                            <textarea name="abstract" class="form-control" rows="3"
+                                                placeholder="Enter ..."><%= article.abstract %></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-1"></td>
+                                        <td class="p-1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: top;" class="pe-2">
+                                            <label for="">Keywords<br>
+                                            </label>
+                                        </td>
+                                        <td class="w-100">
+                                            <input name="keywords" value="<%= article.keywords %>" type="text"
+                                                class="form-control form-control-sm" id="exampleInputEmail1"
+                                                placeholder="Example: transaction costs; dynamic programming;">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">I accept all terms &
+                                    conditions</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm">Proceed
+                                to next step <i class="fa fa-angle-double-right"></i></button>
+
+                        </form>
+
+                        <form class="d-block d-md-none"
+                            action="/v1/dashboard/submit_new_menuscript?article_id=<%= article._id %>" method="post">
+                            <div class="d-block d-md-none">
+                                <div class="form-group mb-2">
+                                    <label>Choose Journal</label>
+                                    <select name="journal_id" class="form-select form-select-sm">
+                                        <option>Select</option>
+                                        <option value="<%= article.journal_id %>" selected>
+                                            <%= article.journal_id %>
+                                        </option>
+                                        <% journals.forEach(function(journal){ %>
+                                            <option value="<%= journal._id %>">
+                                                <%= journal.title %>
+                                            </option>
+                                            <% }); %>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label>Section</label>
+                                    <select name="section" class="form-select form-select-sm">
+                                        <option>Select</option>
+                                        <option value="<%= article.section %>" selected>
+                                            <%= article.section %>
+                                        </option>
+                                        <option value="all">All</option>
+                                        <option value="science">Science</option>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="administrative">Administrative Sciences</option>
+                                        <option value="acoustics">Acoustics</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label>Journal Type</label>
+                                    <select name="journal_type" class="form-select form-select-sm">
+                                        <option>Select</option>
+                                        <option value="<%= article.journal_type %>" selected>
+                                            <%= article.journal_type %>
+                                        </option>
+                                        <option value="all">All</option>
+                                        <option value="science">Science</option>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="administrative">Administrative Sciences</option>
+                                        <option value="acoustics">Acoustics</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="exampleInputEmail1">Article Title</label>
+                                    <input name="article_title" value="<%= article.article_title %>" type="text"
+                                        class="form-control form-control-sm" id="exampleInputEmail1"
+                                        placeholder="Article Title">
+                                </div>
+
+                                <div class="form-group mb-2">
+                                    <label>Abstact</label>
+                                    <textarea name="abstract" value="<%= article.abstract %>" class="form-control"
+                                        rows="3" placeholder="Enter ..."></textarea>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="">Keywords<br><small>hedging; transaction costs; dynamic programming;
+                                            risk management; post-decision state variable</small>
+                                    </label>
+                                    <input name="article_title" value="<%= article.article_title %>" type="text"
+                                        class="form-control form-control-sm" id="exampleInputEmail1"
+                                        placeholder="Article Title">
+                                </div>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">I accept all terms &
+                                    conditions</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm">Proceed
+                                to next step <i class="fa fa-angle-double-right"></i></button>
+
+                        </form>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+
+                </div>
+            </div>
+            <!-- /.card -->
+            <!--/.col (right) -->
+        </div>
+        </div>
+        <%- include('common/footer'); %>

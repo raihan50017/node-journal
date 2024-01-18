@@ -1,0 +1,179 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div style="border-radius: 0px;" class="card">
+                    <div style="border-radius: 0px;" class="card-header text-left">
+                        <h6 class="m-0 py-1 fw-bold">New Menuscript Submission</h6>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="/v1/dashboard/submit_menuscript_step3?article_id=<%= article._id %>" method="post">
+                        <div class="card-body">
+                            <div class="d-flex border-bottom mb-3 pb-2">
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-50"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">1</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Menuscript Information</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-100"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">2</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Author Information</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-100"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">3</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Suggest Reviewers</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-100"
+                                            style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">4</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Upload Files</p>
+                                    </div>
+                                </div>
+
+                                <div style="width: 20%;">
+                                    <div style="position: relative;"
+                                        class="d-flex justify-content-center flex-column align-items-center">
+                                        <div class="w-50"
+                                            style="position:absolute; top:15px; border-top:2px solid green;left:0;z-index:1;">
+                                        </div>
+                                        <div style="z-index: 2;">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                                <p class="m-0 p-0 fw-bold">5</p>
+                                            </div>
+                                        </div>
+                                        <p class="d-none d-md-block">Confirmation</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <% for(let i=0; i < 3; i++) { %>
+                                <div
+                                    class="border-bottom text-center d-flex align-items-center justify-content-between">
+                                    <h5 class="mt-1 mb-1">Reviewer <%= i+1 %>
+                                    </h5>
+                                </div>
+                                <table style="white-space: nowrap;" class="w-100 mt-2">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pe-2">
+                                                <label for="exampleInputEmail1">Reviewer Name</label>
+                                            </td>
+                                            <td class="w-100">
+                                                <input name="reviewer_name<%= i+1 %>" value="<%= article.author_reviewers[i] ? article.author_reviewers[i].reviewer_name: '' %>" type="text"
+                                                    class="form-control form-control-sm" id="exampleInputEmail1"
+                                                    placeholder="Reviewer Name">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-1"></td>
+                                            <td class="p-1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pe-2">
+                                                <label for="exampleInputEmail1">Email</label>
+                                            </td>
+                                            <td class="w-100">
+                                                <input name="email<%= i+1 %>" value="<%= article.author_reviewers[i] ? article.author_reviewers[i].email: '' %>" type="text" class="form-control form-control-sm"
+                                                    id="exampleInputEmail1" placeholder="Email">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-1"></td>
+                                            <td class="p-1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pe-2">
+                                                <label for="exampleInputEmail1">Affiliation</label>
+                                            </td>
+                                            <td class="w-100">
+                                                <input name="affiliation<%= i+1 %>" value="<%= article.author_reviewers[i] ? article.author_reviewers[i].affiliation : '' %>" type="text"
+                                                    class="form-control form-control-sm" id="exampleInputEmail1"
+                                                    placeholder="Affiliation">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <% }%>
+                                    <!-- <div class="d-md-none d-block">
+                                <div class="form-group mb-2">
+                                    <label for="">Reviewer Name
+                                    </label>
+                                    <input name="name" type="text" class="form-control form-control-sm"
+                                        id="exampleInputEmail1" placeholder="full name">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="">Email
+                                    </label>
+                                    <input name="email" type="email" class="form-control form-control-sm"
+                                        id="exampleInputEmail1" placeholder="email address">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="">Affiliation
+                                    </label>
+                                    <input name="name" type="text" class="form-control form-control-sm"
+                                        id="exampleInputEmail1" placeholder="affiliation">
+                                </div>
+                            </div> -->
+                                    
+                        <!-- /.card-body -->
+
+                        <div class="card-footer w-100">
+                            <a href="submit_menuscript_step2?article_id=<%= article._id %>" type="submit"
+                                class="btn btn-primary btn-sm"><i class="fa fa-angle-double-left"></i> Previous step</a>
+                            <button type="submit" class="btn btn-primary btn-sm ms-1">Proceed to next step <i
+                                    class="fa fa-angle-double-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+                <!--/.col (right) -->
+            </div>
+        </div>
+        <%- include('common/footer'); %>

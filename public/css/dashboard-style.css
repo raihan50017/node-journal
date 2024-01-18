@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+.journal-navbar {
+  background-color: #bdd6ee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.journal-nabvar-logo {
+  width: 50px;
+  height: auto;
+}
+.journal-header-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+.journal-header-user {
+  cursor: pointer;
+}
+.journal-sidebar-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.journal-sidebar-item:hover {
+  background-color: #ddd;
+  color: black;
+}
+.custom-table-head {
+  background-color: #2e75b5;
+  color: white;
+}
+.custom-table tbody tr {
+  border-bottom: 2px solid #2e75b5;
+}
+
+.input-group > .custom-file {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.accordion-button::after {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-size: 2rem;
+  background-image: url("+");
+  content: "+";
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url("-");
+  content: "-";
+  transform: rotate(-0deg);
+  width: 1.25rem;
+  height: 1.25rem;
+  background-size: 2rem;
+  left: 0;
+}
+
+.accordion-item {
+  border: 0px solid white;
+}
+
+.accordion-button {
+  border-bottom: 1px solid gray;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-radius: 0px;
+}
+.accordion-item:last-of-type .accordion-button.collapsed {
+  border-radius: 0px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+  background-color: #2e75b5;
+}
+
+.right-panel {
+  width: 80%;
+}
+@media only screen and (max-width: 768px) {
+  .right-panel {
+    width: 100%;
+  }
+}
+textarea.custom-textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: 400px !important;
+  max-height: 300px !important;
+}

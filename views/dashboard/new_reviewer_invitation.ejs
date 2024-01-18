@@ -1,0 +1,80 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="bg-white shadow-sm p-2">
+            <p class="p-0 py-1 m-0 fw-bold">New Reviewer Invitations</p>
+            <p style="border-top:2px solid green;border-bottom:2px solid green;" class="py-3 mt-2 px-2 bg-light mb-0">
+                Use View <a href="">Abstract</a> to view abstract of the submission. Agree or deny to review using <a
+                    href="">Agree to Review</a> and <a href="" class="text-danger">Decline to Review</a> links.</p>
+            <div class="d-flex justify-content-between bg-light m-0">
+                <p class="p-2 m-0">Page: 1 of 1 (Total submissions : 2)</p>
+                <p class="p-2 m-0">Display 10 per page</p>
+            </div>
+            <div class="table-responsive">
+                <table class="w-100 custom-table">
+                    <thead>
+                        <tr>
+                            <td class="custom-table-head p-2">Action</td>
+                            <td class="custom-table-head p-2 border-start text-center">Menuscript Id</td>
+                            <td style="width: 30%;" class="text-center custom-table-head p-2 border-start">Title</td>
+                            <td class="text-center custom-table-head p-2 border-start">Date Reviewer Invited</td>
+                            <td class="text-center custom-table-head p-2 border-start">Review Submission Deadline</td>
+                            <!-- <td class="text-center custom-table-head p-2 border-start">Editor Name</td> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <% articles.forEach(function (article) { %>
+                        <tr>
+                            <td>
+                                <a data-bs-toggle="modal" data-bs-target="#viewSubmission" href=""
+                                    class="p-2 w-100 d-block border-bottom" href="">View Abstract</a>
+                                <form action="/v1/dashboard/article/<%= article._id %>" method="post">
+                                    <input type="hidden" name="is_agree" value="1">
+                                    <button type="submit" class="btn p-2 w-100 d-block border-bottom text-primary">Agree to Review</button>
+                                </form>
+                                <form action="/v1/dashboard/article/<%= article._id %>" method="post">
+                                    <input type="hidden" name="is_decline" value="1">
+                                    <button type="submit" class="btn p-2 w-100 d-block border-bottom text-primary">Decline to Review</button>
+                                </form>
+                                <a href="" class="p-2 w-100 d-block" href="">Send Email</a>
+                            </td>
+                            <td class="border-start p-2 text-center"><%= article.manuscript_id %></td>
+                            <td class="border-start p-2"><%= article.article_title %></td>
+                            <td class="p-2 border-start text-center">--</td>
+                            <td class="p-2 border-start text-center">--</td>
+                            <!-- <td class="p-2 border-start text-center">Mr. X</td> -->
+                        </tr>
+                        <% }); %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="viewSubmission" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="m-0 fw-bold">Magnetic mitohormesis: A non-invasive therapy for inflammatory disorders
+                        </h5>
+                        <p class="m-0 font-weight-regular">Rahman, Gazi Arafat Uz-Zaman Markony, Tanjil Ahmed</p>
+                        <p class="m-0 pt-2 fw-bold">Abstract</p>
+                        <p style="text-align: justify;" class="m-0"> An organism’s survival depends on its ability to
+                            adapt to stress. Mitochondria are the cellular integrators of environmental stressors that
+                            ultimately translate their responses at the organismal level, and are thus central to the
+                            process whereby organisms adapt to their respective environments. Mitochondria produce
+                            molecular energy via oxidativ</p>
+                        <p class="m-0 pt-2 fw-bold">Keyword</p>
+                        <p class="m-0">Agriculture; Science</p>
+                        <button class="btn btn-sm btn-success mt-2"><i class="fa fa-eye"></i> View Menuscript</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('common/footer'); %>

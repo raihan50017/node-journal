@@ -1,0 +1,317 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="bg-white shadow-sm p-2">
+            <p class="p-0 py-1 m-0 fw-bold">Submissions with Require Reviews Complete: <span class="text-success">Mr.
+                    Associate Editor</span></p>
+            <p style="border-top:2px solid green;border-bottom:2px solid green;" class="py-3 mt-2 px-2 bg-light mb-0">
+                These submissions require one of the following actions: <a class="text-succcess" href="">Decision</a> or
+                <a class="text-danger" href="">Additional Review</a>.</p>
+            <div class="d-flex justify-content-between bg-light m-0">
+                <p class="p-2 m-0">Page: 1 of 1 (Total submissions : 2)</p>
+                <p class="p-2 m-0">Display 10 per page</p>
+            </div>
+            <div class="table-responsive">
+                <table class="w-100 custom-table">
+                    <thead>
+                        <tr>
+                            <td class="custom-table-head p-2">Action</td>
+                            <td class="custom-table-head p-2 border-start text-center">Menuscript Id</td>
+                            <td style="width: 30%;" class="text-center custom-table-head p-2 border-start">Title</td>
+                            <td class="text-center custom-table-head p-2 border-start">Submission Date</td>
+                            <td class="text-center custom-table-head p-2 border-start">Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="white-space: nowrap;">
+                                <a data-bs-toggle="modal" data-bs-target="#viewSubmission" href=""
+                                    class="p-2 w-100 d-block border-bottom" href="">View Submission</a>
+                                <a data-bs-toggle="modal" data-bs-target="#details" href=""
+                                    class="p-2 w-100 d-block border-bottom" href="">Details</a>
+                                <a href="reviewer_comment" class="p-2 w-100 d-block border-bottom" href="">View
+                                    Reviewers Comment</a>
+                                <a class="p-2 w-100 d-block border-bottom" href="submit_editor_decision">Submit
+                                    Editor Decision</a>
+                                <a href="" class="p-2 w-100 d-block" href="">Send Email</a>
+                            </td>
+                            <td class="border-start p-2 text-center">JN_200001</td>
+                            <td class="border-start p-2">Partially Overlapping Channel Assignment under Coexistence of
+                                Bonded and Non-Bonded Channels.</td>
+                            <td class="p-2 border-start text-center">6-Dec-22</td>
+                            <td class="p-2 border-start text-center">With editor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="viewSubmission" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="m-0 fw-bold">Magnetic mitohormesis: A non-invasive therapy for inflammatory disorders
+                        </h5>
+                        <p class="m-0 font-weight-regular">Rahman, Gazi Arafat Uz-Zaman Markony, Tanjil Ahmed</p>
+                        <p class="m-0 pt-2 fw-bold">Abstract</p>
+                        <p style="text-align: justify;" class="m-0"> An organism’s survival depends on its ability to
+                            adapt to stress. Mitochondria are the cellular integrators of environmental stressors that
+                            ultimately translate their responses at the organismal level, and are thus central to the
+                            process whereby organisms adapt to their respective environments. Mitochondria produce
+                            molecular energy via oxidativ</p>
+                        <p class="m-0 pt-2 fw-bold">Keyword</p>
+                        <p class="m-0">Agriculture; Science</p>
+                        <button class="btn btn-sm btn-success mt-2"><i class="fa fa-eye"></i> View Menuscript</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Details Modal -->
+        <div class="modal fade" id="details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div style="border:0px;" class="modal-header align-items-center py-2 m-0">
+                        <h6 class="fw-bold text-start m-0 p-0">Detailed Information <span
+                                class="text-success">MANUSCRIPT ID: JN200001</span></h6>
+                        <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pb-3 bg-light">
+                            <p class="border-top border-bottom p-2 text-center">Partially Overlapping Channel Assignment
+                                under Coexistence of Bonded and Non-Bonded Channels.
+                            </p>
+                            <p class="text-center m-0 fw-bold">SUBMISSION INFORMATION</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%;">Corresponding Author</td>
+                                            <td class="bg-white">Md Selim Al Mamun </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Corresponding Author E-mail</td>
+                                            <td class="bg-white"><a
+                                                    href="mailto:mamun0013@gmail.com">mamun0013@gmail.com</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Article Type</td>
+                                            <td class="bg-white">Research Article </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Section/Field</td>
+                                            <td class="bg-white">Computer Science</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="p-1 m-0 fw-bold">Abstract</p>
+                            <p class="bg-white p-1 m-0 border">Abstact will go here..</p>
+                            <div class="table-responsive mt-3">
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%;">Keywords </td>
+                                            <td class="bg-white">Wireless local area network; partially overlapping
+                                                channels; interference </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Initial date submission</td>
+                                            <td class="bg-white">24-Dec-22 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Editorial status date </td>
+                                            <td class="bg-white">25-Dec-22 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Current editorial status</td>
+                                            <td class="bg-white">with editor </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Final decision</td>
+                                            <td class="bg-white"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-center m-0 fw-bold">EDITOR INFORMATION</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%;">Corresponding Editor</td>
+                                            <td class="bg-white">Md Selim Al Mamun </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Role</td>
+                                            <td class="bg-white">Editor</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Assigned</td>
+                                            <td class="bg-white">24-Dec-22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Completed</td>
+                                            <td class="bg-white"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Elapsed Date</td>
+                                            <td class="bg-white">5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="text-center m-0 fw-bold">REVIEWER INFORMATION</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%;">Name</td>
+                                            <td class="">Md Selim Al Mamun </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Review Status</td>
+                                            <td class="bg-white"><span class="text-danger">Agreed to review</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Reviewer Invited</td>
+                                            <td class="bg-white">24-Dec-22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Reviewer Agreed</td>
+                                            <td class="bg-white">24-Dec-22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Review Due </td>
+                                            <td class="bg-white">12/30/2022 <a href="">(CHANGE)</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%;">Name</td>
+                                            <td class="">Md Selim Al Mamun </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Review Status</td>
+                                            <td class="bg-white"><span class="text-danger">Agreed to review</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Reviewer Invited</td>
+                                            <td class="bg-white">24-Dec-22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Reviewer Agreed</td>
+                                            <td class="bg-white">24-Dec-22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Review Due </td>
+                                            <td class="bg-white">12/30/2022 <a data-toggle="modal"
+                                                    data-target="#reviewDue" href="">(CHANGE)</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%;">Name</td>
+                                            <td class="">Md Selim Al Mamun </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Review Status</td>
+                                            <td class="bg-white"><span class="text-danger">Agreed to review</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Reviewer Invited</td>
+                                            <td class="bg-white">24-Dec-22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Reviewer Agreed</td>
+                                            <td class="bg-white">24-Dec-22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Review Due </td>
+                                            <td class="bg-white">12/30/2022 <a data-bs-toggle="modal"
+                                                    data-bs-target="#reviewDue" href="">(CHANGE)</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <p class="text-center m-0 fw-bold">PUBLICATIONS TASKS</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%;">Target Online Publication Date</td>
+                                            <td class="bg-white">15-Feb-23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Target Number of Pages </td>
+                                            <td class="bg-white">10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Target Publication Date </td>
+                                            <td class="bg-white">15-Mar-23 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Target Volume </td>
+                                            <td class="bg-white">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Target Issue </td>
+                                            <td class="bg-white">1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="p-1 m-0 fw-bold">Publication Note</p>
+                            <p class="bg-white p-1 m-0 border">Publication note will go here..</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invite Reviewer Modal -->
+        <div class="modal fade" id="submitEditorDecision" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header align-items-center">
+                        <h6 class="fw-bold text-start m-0">Decisio for <span class="text-success m-0">MANUSCRIPT ID:
+                                JN200001</span></h6>
+                        <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <label class="form-label">Accept or Deny</label>
+                            <select class="form-select form-select-sm mb-3" aria-label="Default select example">
+                                <option selected>Accept</option>
+                                <option value="1">Deny</option>
+                            </select>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Add comment</label>
+                                <input type="text" class="form-control form-control-sm" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('common/footer'); %>

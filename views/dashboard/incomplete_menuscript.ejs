@@ -1,0 +1,54 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="bg-white shadow-sm p-2">
+            <p class="p-0 m-0 text-danger fw-bold">Incomplete Submissions</p>
+            <p style="border-top:2px solid green;border-bottom:2px solid green;" class="py-3 mt-2 px-2 bg-light mb-0">
+                Use <a href="">Edit Submission</a> link to resume your submission i.e. changes meta data and upload new
+                files. Delete your submission using <a class="text-danger" href="">Delete Submission</a>.</p>
+            <div class="d-flex justify-content-between bg-light m-0">
+                <p class="p-2 m-0">Page: 1 of 1 (Total submissions : 2)</p>
+                <p class="p-2 m-0">Display 10 per page</p>
+            </div>
+            <div class="table-responsive">
+                <table class="w-100 custom-table">
+                    <thead>
+                        <tr>
+                            <td class="custom-table-head p-2">Action</td>
+                            <td style="width: 50%;" class="text-center custom-table-head p-2 border-start">Title</td>
+                            <td class="text-center custom-table-head p-2 border-start">Date</td>
+                            <td class="text-center custom-table-head p-2 border-start">Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% menuscripts.forEach(function(menuscript){ %>
+                            <tr>
+                                <td>
+                                    <a href="<%= menuscript.edit_url %>?article_id=<%= menuscript._id %>"
+                                        class="p-2 w-100 d-block border-bottom">Edit Submission</a>
+                                    <form action="incomplete_menuscript?article_id=<%= menuscript._id %>&action=delete"
+                                        method="post">
+                                        <button type="submit"
+                                            class="btn text-danger border-bottom text-decoration-underline text-start">Remove
+                                            Submission</button>
+                                    </form>
+                                    <a href="" class="p-2 w-100 d-block" href="">Send Mail</a>
+                                </td>
+                                <td class="border-start p-2">
+                                    <%= menuscript.article_title %>
+                                </td>
+                                <td class="p-2 border-start text-center">
+                                    <%= menuscript.createdAt %>
+                                </td>
+                                <td class="p-2 border-start text-center">Incomplete</td>
+                            </tr>
+
+                            <% }); %>
+
+                    </tbody>
+                </table>
+                <h5 class="text-center text-danger mt-3">
+                    <%= error %>
+                </h5>
+            </div>
+        </div>
+        <%- include('common/footer'); %>

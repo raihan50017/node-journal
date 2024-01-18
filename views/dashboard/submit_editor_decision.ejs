@@ -1,0 +1,673 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="bg-white shadow-sm mb-4">
+            <p class="m-0 p-2 fw-bold"><a href="editor_required_review_completed">Required Review Completed</a> <i
+                    class="fa fa-angle-right fs-6 fw-bold"></i> <span class="text-danger">Submit editor decision</span>
+            </p>
+            <div>
+                <div class="p-2">
+                    <p style="border-top: 1px solid green;" class="p-2 m-0 fw-bold">Editor: Md Selim Al Mamun</p>
+                    <div>
+                        <div class="row g-0 align-items-center mt-2 bg-light border-top border-bottom">
+                            <div class="col-md-6 p-2">
+                                <div class="d-flex align-items-center w-100 justify-content-between">
+                                    Decision of the editor
+                                    <select class="form-select w-50" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Deny</option>
+                                        <option value="2">Accept</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-2 border-start border-1">
+                                <div class="d-flex align-items-center w-100 justify-content-between">
+                                    Editor manuscript rating (1-100)
+                                    <input type="text" class="form-control w-50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="text-start m-0 p-2">Submit editor decision for <span
+                            class="text-success m-0 fw-bold">MANUSCRIPT ID: JN200001</span></h6>
+                </div>
+                <div class="p-2">
+                    <p class="text-start m-0 p-2 bg-light border-top border-bottom">Partially Overlapping Channel
+                        Assignment under Coexistence of Bonded and Non-Bonded Channels.</p>
+                    <p class="text-start p-2 m-0">Clink the recommendation term to view the comments for the
+                        submission..</p>
+                    <div>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr class="text-white" style="background-color: #2E75B5;">
+                                        <td>Reviewer</td>
+                                        <td></td>
+                                        <td class="border-start">Recommendation</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start">
+                                            Reviewer 1
+                                        </td>
+                                        <td class="text-start">Mr. X</td>
+                                        <td class="border-start">Major Revision</td>
+                                        <td class="text-end">
+                                            <a data-bs-toggle="modal" data-bs-target="#viewComment" href="">View
+                                                Comments</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">
+                                            Reviewer 2
+                                        </td>
+                                        <td class="text-start">Mr. X</td>
+                                        <td class="border-start">Major Revision</td>
+                                        <td class="text-end">
+                                            <a data-bs-toggle="modal" data-bs-target="#viewComment" href="">View
+                                                Comments</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">
+                                            Handling Editor
+                                        </td>
+                                        <td class="text-start">Mr. Editor</td>
+                                        <td class="border-start"></td>
+                                        <td class="text-end">
+                                            <a data-bs-toggle="modal" data-bs-target="#viewComment" href=""></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-sm mb-4 p-2">
+            <table class="table table-sm">
+                <tr class="text-white" style="background-color: #2E75B5;">
+                    <td>Comment to Author</td>
+                </tr>
+                <tr>
+                    <td class="px-0"><textarea class="form-control"></textarea></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="bg-white shadow-sm mb-4 p-2">
+            <div class="table-responsive">
+                <table class="table table-sm">
+                    <tbody>
+                        <tr class="text-white" style="background-color: #2E75B5;">
+                            <td colspan="2">Individual reviewer comments to authors</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%;" class="bg-light">
+                                <input class="form-check-input" type="checkbox">
+                                <span>Md Selim Al Mamun</span><br>
+                                <span class="m-0">Reviewer 1</span>
+                            </td>
+                            <td style="vertical-align: center;">
+                                <p>Reviewer Comment..</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%;" class="bg-light">
+                                <input class="form-check-input" type="checkbox">
+                                <span>Md Selim Al Mamun</span><br>
+                                <span class="m-0">Reviewer 2</span>
+                            </td>
+                            <td style="vertical-align: center;">
+                                <p>Reviewer Comment..</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-sm mb-4 p-2">
+            <div class="my-2" style="border-top:1px solid green; position:relative;">
+                <p class="bg-white fw-bold pe-1" style="position:absolute; top:-14px;">Editor Decision Phrases</p>
+                <p class="m-0 mt-3">
+                    Editor decision phrases available for inclusion in the Decision Letter are displayed below. Select
+                    the phrases you wish to include.
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    Select
+                                </th>
+                                <th>Phrases</th>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;" class="text-center">
+                                    <input class="form-check-input" type="checkbox">
+                                </td>
+                                <td>
+                                    Whilel your results are potential interest, the topic of your manuscript falls
+                                    outside of the scope of this journal. For an overview Aims & Scope, please have a
+                                    look at the journal's homepage. Hope you will conisder the journal for publication
+                                    of future studies within the scope.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;" class="text-center">
+                                    <input class="form-check-input" type="checkbox">
+                                </td>
+                                <td>
+                                    Although your manscript falls within the aim and scope of this journal, it is being
+                                    declined due to the lack of sufficient novelty. We receive a much larger number of
+                                    papers than we are able to accept.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;" class="text-center">
+                                    <input class="form-check-input" type="checkbox">
+                                </td>
+                                <td>
+                                    In its current state, the level of English throughout your manuscript does not meet
+                                    the journal's required standard. You may wish to ask a native speaker to check your
+                                    manuscript for grammr, style ans syntax, or use the professional language editing
+                                    options available from any reputed journal author services.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;" class="text-center">
+                                    <input class="form-check-input" type="checkbox">
+                                </td>
+                                <td>
+                                    We regret to tell you we were not able to find the required number of reviewers to
+                                    evaluate your manuscript; we don't want to delay the process for you any longer.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;" class="text-center">
+                                    <input class="form-check-input" type="checkbox">
+                                </td>
+                                <td>
+                                    Your manuscript shows and unacceptable level of overlap with prior publications.
+                                    There are numerous complete sentences and paragraphs that are virtually unchanged.
+                                    In the present form, the originality of the study cannot be assessed.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;" class="text-center">
+                                    <input class="form-check-input" type="checkbox">
+                                </td>
+                                <td>
+                                    Although the problems being addressed are potentially of interest to our readership,
+                                    your manuscript does not meet the required quality quality standards to be
+                                    considered for publication.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;" class="text-center">
+                                    <input class="form-check-input" type="checkbox">
+                                </td>
+                                <td>
+                                    The research results reported are to premature for publication. More work is needed
+                                    to substantiate the conclusions in your manuscript.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text-center">
+                <button style="width: 150px;" class="btn btn-success btn-sm">Save and Submit Later</button>
+                <button style="width: 150px;" data-bs-toggle="modal" data-bs-target="#submitDecisionModal"
+                    class="btn btn-success btn-sm">Proceed</button>
+            </div>
+        </div>
+
+        <!--Reviewer Comment Modal -->
+        <div class="modal fade" id="viewComment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div style="border-bottom: 1px solid green;" class="modal-header py-1">
+                        <h5 class="modal-title m-0" id="exampleModalLabel">Reviews and Comments for <span
+                                class="text-success">Manuscript: JN_200001</span></h5>
+                        <button type="button" class="btn-close bnt-sm" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <p class="px-3 py-2 m-0 border-bottom bg-light">Partially Overlapping Channel Assignment under
+                            Coexistence of Bonded and Non-Bonded Channels.</p>
+                        <p class="px-3 py-2 border-bottom m-0"><span class="text-danger">Reviewer 1:</span> Md Selim Al
+                            Mamun</p>
+                        <div class="row px-3 py-2">
+                            <div class="col-6 text-success">
+                                <p class="m-0 p-0">Overall Manuscript Rating:</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="m-0 p-0">Major Revision</p>
+                            </div>
+                        </div>
+                        <div class="table-responsive px-3">
+                            <table class="table table-sm">
+                                <tbody>
+                                    <tr class="text-white" style="background-color: #2E75B5;">
+                                        <td>Manuscrip rating questions</td>
+                                        <td class="text-center">Scale</td>
+                                        <td class="text-center">Rating</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Does this manuscript fit the scope of the journal?
+                                        </td>
+                                        <td class="text-center">
+                                            0-4
+                                        </td>
+                                        <td class="text-success text-center">
+                                            <a href="">2</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Does this manuscript fit the scope of the journal?
+                                        </td>
+                                        <td class="text-center">
+                                            0-4
+                                        </td>
+                                        <td class="text-success text-center">
+                                            <a href="">2</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Does this manuscript fit the scope of the journal?
+                                        </td>
+                                        <td class="text-center">
+                                            0-4
+                                        </td>
+                                        <td class="text-success text-center">
+                                            <a href="">2</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="px-3">
+                            <table class="table table-sm">
+                                <tbody>
+                                    <tr class="text-white" style="background-color: #2E75B5;">
+                                        <td>Comment to Editor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Comment to Editor will go here..</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="px-3">
+                            <table class="table table-sm">
+                                <tbody>
+                                    <tr class="text-white" style="background-color: #2E75B5;">
+                                        <td>Comment to Author</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Comment to Author will go here..</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Details Modal -->
+        <div class="modal fade" id="details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header align-items-center">
+                        <h6 class="fw-bold text-start m-0"><span class="text-success">MANUSCRIPT ID: JN200001</span>
+                        </h6>
+                        <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="text-white px-1" style="background-color: #001C54;font-size:14px;">Research
+                            Article</span>
+                        <h5 class="m-0 fw-bold">Magnetic mitohormesis: A non-invasive therapy for inflammatory disorders
+                        </h5>
+                        <p class="m-0 fw-regular">Rahman, Gazi Arafat Uz-Zaman Markony, Tanjil Ahmed</p>
+                        <p class="m-0 pt-2 fw-bold">Correnponding Authors:</p>
+                        <div class="table-responsive mt-1">
+                            <table class="w-100 custom-table">
+                                <thead>
+                                    <tr>
+                                        <td class="custom-table-head p-2">Name</td>
+                                        <td class="custom-table-head p-2 border-start">Email</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-2">Rahman</td>
+                                        <td class="p-2 border-start">rahman@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Tanzil</td>
+                                        <td class="p-2 border-start">tanzil@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Gazi Arafat Uz-Zaman Markony</td>
+                                        <td class="p-2 border-start">gazi@gmail.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="m-0 pt-2 fw-bold">Keyword</p>
+                        <p class="m-0">Agriculture; Science</p>
+                        <p class="m-0 pt-2 fw-bold">Section</p>
+                        <p class="m-0">Agriculture</p>
+                        <p class="m-0 pt-2 fw-bold">Abstract</p>
+                        <p style="text-align: justify;" class="m-0"> An organism’s survival depends on its ability to
+                            adapt to stress. Mitochondria are the cellular integrators of environmental stressors that
+                            ultimately translate their responses at the organismal level, and are thus central to the
+                            process whereby organisms adapt to their respective environments. Mitochondria produce
+                            molecular energy via oxidativ</p>
+                        <p class="m-0 pt-2 fw-bold">Editorial Status:<span style="font-weight: 400;"> Pending</span></p>
+                        <p class="m-0 pt-2 fw-bold">Editor's Info</p>
+                        <div class="table-responsive mt-1">
+                            <table class="w-100 custom-table">
+                                <thead>
+                                    <tr>
+                                        <td class="custom-table-head p-2">Name</td>
+                                        <td class="custom-table-head p-2 border-start">Email</td>
+                                        <td class="custom-table-head p-2 border-start">Comment</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-2">Rahman</td>
+                                        <td class="p-2 border-start">rahman@gmail.com</td>
+                                        <td class="p-2 border-start">Some comments....</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="m-0 pt-2 fw-bold">Reviewer's Info</p>
+                        <div class="table-responsive mt-1">
+                            <table class="w-100 custom-table">
+                                <thead>
+                                    <tr>
+                                        <td class="custom-table-head p-2">Name</td>
+                                        <td class="custom-table-head p-2 border-start">Email</td>
+                                        <td class="custom-table-head p-2 border-start">Comment</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-2">Rahman</td>
+                                        <td class="p-2 border-start">rahman@gmail.com</td>
+                                        <td class="p-2 border-start">Some comments....</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="m-0 pt-2 font-weight-bold"><i class="fa fa-calendar"></i> Initial Submission
+                            Date:<span style="font-weight: 400;"> 12-5-2022</span></p>
+                        <p class="m-0 pt-1 font-weight-bold"><i class="fa fa-calendar"></i> Editorial Status Date:<span
+                                style="font-weight: 400;"> 12-5-2022</span></p>
+                        <button class="btn btn-success btn-sm mt-2"><i class="fa fa-eye"></i> View Menuscript</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invite Reviewer Modal -->
+        <div class="modal fade" id="inviteReviewerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header align-items-center border-0">
+                        <h6 class="fw-bold text-start m-0">Invite Reviewer for <span class="text-success m-0">MANUSCRIPT
+                                ID: JN200001</span></h6>
+                        <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="border-bottom: 1px solid #002147; border-top:1px solid #002147;"
+                            class="text-center m-0 p-2 fw-bold bg-light">Partially Overlapping Channel Assignment under
+                            Coexistence of Bonded and Non-Bonded Channels.</p>
+                        <div class="border position-relative p-0 mb-4 mt-4">
+                            <p style="top:-15px;"
+                                class="position-absolute m-0 p-0 bg-white px-2 mx-3 text-danger fw-bold">Default Reviwer
+                                Settings</p>
+                            <div class="bg-light">
+                                <table class="border-0 w-100 mt-3">
+                                    <tr>
+                                        <td class="p-2">The submission will move to Required Review Completed folder if
+                                            <span class="text-danger">2 reviews</span> completed.</td>
+                                        <td class="p-2 text-center">
+                                            <a href="">Change</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">The submission will move to Required Review Completed folder if
+                                            <span class="text-danger">2 reviews</span> completed.</td>
+                                        <td class="p-2 text-center">
+                                            <a href="">Change</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">The submission will move to Required Review Completed folder if
+                                            <span class="text-danger">2 reviews</span> completed.</td>
+                                        <td class="p-2 text-center">
+                                            <a href="">Change</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="border position-relative p-0 mb-2">
+                            <p style="top:-15px;"
+                                class="position-absolute m-0 p-0 bg-white px-2 mx-3 text-success fw-bold">Reviewer
+                                Search</p>
+                            <div class="p-2 mt-3">
+                                <form action="">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3">
+                                            <p class="text-center m-0">SEARCH</p>
+                                        </div>
+                                        <div class="col-md-3 text-center">
+                                            <select class="form-select border-0 w-auto"
+                                                aria-label="Default select example">
+                                                <option selected>Search by section</option>
+                                                <option value="1">Search by Reviewers</option>
+                                                <option value="2">Search by Authors</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="m-0 text-center">FROM</p>
+                                        </div>
+                                        <div class="col-md-3 text-center">
+                                            <select class="form-select border-0 w-auto"
+                                                aria-label="Default select example">
+                                                <option selected>All Reviewers</option>
+                                                <option value="1">All Editor</option>
+                                                <option value="2">Entire Database</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <button class="btn btn-outline-success btn-sm px-5">Search <i
+                                                class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div>
+                            <form>
+                                <p class="p-2 text-center fw-bold mt-2 m-0">Reviewer Candidate</p>
+                                <div class="table-responsive">
+                                    <table class="w-100 custom-table">
+                                        <thead>
+                                            <tr>
+                                                <td class="custom-table-head p-2">Select</td>
+                                                <td class="custom-table-head p-2 border-start text-center">Reviewer Name
+                                                </td>
+                                                <td class="text-center custom-table-head p-2 border-start">Editor</td>
+                                                <td class="text-center custom-table-head p-2 border-start">Section</td>
+                                                <td class="text-start custom-table-head p-2 border-start">Reviewer
+                                                    Statistics</td>
+                                                <td class="text-start custom-table-head p-2 border-start">Invitation
+                                                    Statistics</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="form-check text-center">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+                                                </td>
+                                                <td class="border-start p-2 text-center">Mr. X</td>
+                                                <td class="border-start p-2">Yes</td>
+                                                <td class="p-2 border-start text-center">Networking</td>
+                                                <td class="p-2 border-start text-start">
+                                                    Review in Progress <span class="text-danger">(2)</span><br>
+                                                    completed Review <span class="text-danger">(2)</span>
+                                                </td>
+                                                <td class="p-2 border-start text-start">
+                                                    Aggreed <span class="text-success">(2)</span><br>
+                                                    Denied <span class="text-danger">(2)</span>
+                                                    <br>
+                                                    Total invitation <span class="text-success">(4)</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="form-check text-center">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+                                                </td>
+                                                <td class="border-start p-2 text-center">Mr. X</td>
+                                                <td class="border-start p-2">Yes</td>
+                                                <td class="p-2 border-start text-center">Networking</td>
+                                                <td class="p-2 border-start text-start">
+                                                    Review in Progress <span class="text-danger">(2)</span><br>
+                                                    completed Review <span class="text-danger">(2)</span>
+                                                </td>
+                                                <td class="p-2 border-start text-start">
+                                                    Aggreed <span class="text-success">(2)</span><br>
+                                                    Denied <span class="text-danger">(2)</span>
+                                                    <br>
+                                                    Total invitation <span class="text-success">(4)</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-outline-success btn-sm mt-3 px-5">Proceed</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Decision Modal -->
+        <div class="modal fade" id="submitDecisionModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content bg-light">
+                    <div style="border-bottom: 1px solid green;" class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send editor decision to author</h5>
+                        <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <table style="vertical-align: middle;" class="table">
+                                <tr>
+                                    <td>Revision due</td>
+                                    <td class="px-0">
+                                        <input type="date" class="form-control w-auto">
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Editor decision</td>
+                                    <td class="px-0" colspan="2">Major revision needed</td>
+                                </tr>
+                                <tr>
+                                    <td>Modify decision</td>
+                                    <td class="px-0 py-1" colspan="2">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">Accept</option>
+                                            <option value="2">Deny</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>FROM</td>
+                                    <td class="px-0" colspan="2">Journal name</td>
+                                </tr>
+                                <tr>
+                                    <td>TO</td>
+                                    <td class="px-0" colspan="2">Corresponding author</td>
+                                </tr>
+                                <tr>
+                                    <td>Letter Subject</td>
+                                    <td class="px-0" colspan="2">Decision on your submission Manuscript:<span
+                                            class="text-danger"> JN_200001</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: baseline;" class="text-end"></td>
+                                    <td class="px-0 text-success fw-bold" colspan="2"><input
+                                            class="form-control-check me-1" type="checkbox">
+                                        Associated editor name</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: baseline;" class="text-end">cc</td>
+                                    <td class="bg-light px-0 text-success fw-bold" colspan="2"><textarea
+                                            class="form-control form-control-sm"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: baseline;" class="text-end">bcc</td>
+                                    <td class="bg-light px-0 text-success fw-bold" colspan="2"><textarea
+                                            class="form-control form-control-sm"></textarea></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <p class="m-0">Letter body</p>
+                            <textarea class="fs-6" id="froala-editor">
+                    <p class="m-0"> Dear Corresponding author</p>
+                    Thank you for submitting your manuscript to Journal Name. We have completed the review of your manuscript. A summary is appended below.
+                    <p class="m-0">King regards</p>
+                    <p class="m-0">Editor name</p>
+                    <p class="m-0">Journal name</p>
+                    </textarea>
+                            <script>
+                                new FroalaEditor('textarea#froala-editor')
+                            </script>
+                            <label for="formFileSm" class="form-label">Attachment</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                        </div>
+                    </div>
+                    <div class="text-center mb-4">
+                        <button class="btn btn-sm btn-success">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('common/footer'); %>

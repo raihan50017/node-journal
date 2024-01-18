@@ -1,0 +1,8 @@
+<div class="px-4 py-1">
+    <div class="d-flex justify-content-between align-items-center">
+        <a href="/v1/" class="text-black"><span class="text-primary"> <img alt="" src="static/images/logo.png" style="width:75px"></a>
+        <div class="d-flex align-items-center flex-column justify-content-between">
+            <a style="color:brown;" href="<%= cookieFound ? '/v1/dashboard' : '/v1/auth/login' %>" class="px-2 py-1 text-dark"><i style="color: brown;" class="icon-user"></i> <%= cookieFound ? 'Dashboard' : 'Login/Register' %></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="bg-white shadow-sm p-2">
+            <p class="py-1 m-0 fw-bold">Submissions Revision Needed</p>
+            <div class="d-flex justify-content-between bg-light m-0">
+                <p class="p-2 m-0">Page: 1 of 1 (Total submissions : 2)</p>
+                <p class="p-2 m-0">Display 10 per page</p>
+            </div>
+            <div class="table-responsive">
+                <table class="w-100 custom-table">
+                    <thead>
+                        <tr>
+                            <td class="custom-table-head p-2">Action</td>
+                            <td style="width: 50%;" class="text-center custom-table-head p-2 border-start">Title</td>
+                            <td class="text-center custom-table-head p-2 border-start">Submission Date</td>
+                            <td class="text-center custom-table-head p-2 border-start">Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% articles.forEach(function (article) { %>
+                            <tr>
+                                <td>
+                                    <a data-bs-toggle="modal" data-bs-target="#reviewerComment" href=""
+                                        class="p-2 w-100 d-block border-bottom" href="">Reviewer's comments</a>
+                                    <a data-bs-toggle="modal" data-bs-target="#submitRevision" href=""
+                                        class="p-2 w-100 d-block border-bottom" href="">Submit Revision</a>
+                                    <a href="" class="p-2 w-100 d-block" href="">Send Mail</a>
+                                </td>
+                                <td class="border-start p-2">
+                                    <%= article.article_title %>
+                                </td>
+                                <td class="p-2 border-start text-center">
+                                    <%= article.initial_submission_date %>
+                                </td>
+                                <td class="p-2 border-start text-center">Revision needed</td>
+                            </tr>
+
+                            <% }); %>
+
+                    </tbody>
+                </table>
+
+                <h5 class="text-center text-danger mt-3">
+                    <%= error %>
+                </h5>
+            </div>
+        </div>
+
+        <!-- Submit Revision Modal -->
+        <div class="modal fade" id="submitRevision" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="submitRevision">Submit Revision</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group mb-2">
+                                <label for="exampleInputFile">Corrected menuscript</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="exampleInputFile">Letter to editor</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-success me-auto">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviewer Comment -->
+        <div class="modal fade" id="reviewerComment" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="submitRevision">Reviewer's Comments</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Comment...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('common/footer'); %>

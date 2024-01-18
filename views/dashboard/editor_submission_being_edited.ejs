@@ -1,0 +1,178 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+<div class="bg-white shadow-sm p-2">
+    <p class="p-0 py-1 m-0 fw-bold">Submission Being Edited</p>
+    <p style="border-top:2px solid green;border-bottom:2px solid green;" class="py-3 mt-2 px-2 bg-light mb-0">These are the submissions that have been <a href="" class="text-danger">assigned to the editor</a>. They require action such as <a href="" class="text-success">reviewer invitation</a> or <a href="" class="text-danger">decision</a>.</p>
+    <div class="d-flex justify-content-between bg-light m-0">
+        <p class="p-2 m-0">Page: 1 of 1 (Total submissions : 2)</p>
+        <p class="p-2 m-0">Display 10 per page</p>
+    </div>
+    <div class="table-responsive">
+        <table class="w-100 custom-table">
+            <thead>
+                <tr>
+                    <td class="custom-table-head p-2">Action</td>
+                    <td class="custom-table-head p-2 border-start text-center">Menuscript Id</td>
+                    <td style="width: 30%;" class="text-center custom-table-head p-2 border-start">Title</td>
+                    <td class="text-center custom-table-head p-2 border-start">Submission Date</td>
+                    <td class="text-center custom-table-head p-2 border-start">Status</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="white-space: nowrap;">
+                        <a data-bs-toggle="modal" data-bs-target="#viewSubmission" href="" class="p-2 w-100 d-block border-bottom" href="">View Submission</a>
+                        <a href="" class="p-2 w-100 d-block border-bottom" href="">Similarity Check</a>
+                        <a data-bs-toggle="modal" data-bs-target="#details" href="" class="p-2 w-100 d-block border-bottom" href="">Details</a>
+                        <a class="p-2 w-100 d-block border-bottom" href="invite_reviewer">Invite Reviewers</a>
+                        <a data-bs-toggle="modal" data-bs-target="#submitEditorDecision" href="" class="p-2 w-100 d-block border-bottom" href="">Submit Editor Decision</a>
+                        <a href="" class="p-2 w-100 d-block" href="">Send Email</a>
+                    </td>
+                    <td class="border-start p-2 text-center">JN_200001</td>
+                    <td class="border-start p-2">Partially Overlapping Channel Assignment under Coexistence of Bonded and Non-Bonded Channels.</td>
+                    <td class="p-2 border-start text-center">6-Dec-22</td>
+                    <td class="p-2 border-start text-center">With editor</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="viewSubmission" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="m-0 fw-bold">Magnetic mitohormesis: A non-invasive therapy for inflammatory disorders</h5>
+                <p class="m-0 font-weight-regular">Rahman, Gazi Arafat Uz-Zaman Markony, Tanjil Ahmed</p>
+                <p class="m-0 pt-2 fw-bold">Abstract</p>
+                <p style="text-align: justify;" class="m-0"> An organism’s survival depends on its ability to adapt to stress. Mitochondria are the cellular integrators of environmental stressors that ultimately translate their responses at the organismal level, and are thus central to the process whereby organisms adapt to their respective environments. Mitochondria produce molecular energy via oxidativ</p>
+                <p class="m-0 pt-2 fw-bold">Keyword</p>
+                <p class="m-0">Agriculture; Science</p>
+                <button class="btn btn-sm btn-success mt-2"><i class="fa fa-eye"></i> View Menuscript</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Details Modal -->
+<div class="modal fade" id="details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header align-items-center">
+                <h6 class="fw-bold text-start m-0"><span class="text-success">MANUSCRIPT ID: JN200001</span></h6>
+                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span class="text-white px-1" style="background-color: #001C54;font-size:14px;">Research Article</span>
+                <h5 class="m-0 fw-bold">Magnetic mitohormesis: A non-invasive therapy for inflammatory disorders</h5>
+                <p class="m-0 fw-regular">Rahman, Gazi Arafat Uz-Zaman Markony, Tanjil Ahmed</p>
+                <p class="m-0 pt-2 fw-bold">Correnponding Authors:</p>
+                <div class="table-responsive mt-1">
+                    <table class="w-100 custom-table">
+                        <thead>
+                            <tr>
+                                <td class="custom-table-head p-2">Name</td>
+                                <td class="custom-table-head p-2 border-start">Email</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2">Rahman</td>
+                                <td class="p-2 border-start">rahman@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">Tanzil</td>
+                                <td class="p-2 border-start">tanzil@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">Gazi Arafat Uz-Zaman Markony</td>
+                                <td class="p-2 border-start">gazi@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="m-0 pt-2 fw-bold">Keyword</p>
+                <p class="m-0">Agriculture; Science</p>
+                <p class="m-0 pt-2 fw-bold">Section</p>
+                <p class="m-0">Agriculture</p>
+                <p class="m-0 pt-2 fw-bold">Abstract</p>
+                <p style="text-align: justify;" class="m-0"> An organism’s survival depends on its ability to adapt to stress. Mitochondria are the cellular integrators of environmental stressors that ultimately translate their responses at the organismal level, and are thus central to the process whereby organisms adapt to their respective environments. Mitochondria produce molecular energy via oxidativ</p>
+                <p class="m-0 pt-2 fw-bold">Editorial Status:<span style="font-weight: 400;"> Pending</span></p>
+                <p class="m-0 pt-2 fw-bold">Editor's Info</p>
+                <div class="table-responsive mt-1">
+                    <table class="w-100 custom-table">
+                        <thead>
+                            <tr>
+                                <td class="custom-table-head p-2">Name</td>
+                                <td class="custom-table-head p-2 border-start">Email</td>
+                                <td class="custom-table-head p-2 border-start">Comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2">Rahman</td>
+                                <td class="p-2 border-start">rahman@gmail.com</td>
+                                <td class="p-2 border-start">Some comments....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="m-0 pt-2 fw-bold">Reviewer's Info</p>
+                <div class="table-responsive mt-1">
+                    <table class="w-100 custom-table">
+                        <thead>
+                            <tr>
+                                <td class="custom-table-head p-2">Name</td>
+                                <td class="custom-table-head p-2 border-start">Email</td>
+                                <td class="custom-table-head p-2 border-start">Comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2">Rahman</td>
+                                <td class="p-2 border-start">rahman@gmail.com</td>
+                                <td class="p-2 border-start">Some comments....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="m-0 pt-2 font-weight-bold"><i class="fa fa-calendar"></i> Initial Submission Date:<span style="font-weight: 400;"> 12-5-2022</span></p>
+                <p class="m-0 pt-1 font-weight-bold"><i class="fa fa-calendar"></i> Editorial Status Date:<span style="font-weight: 400;"> 12-5-2022</span></p>
+                <button class="btn btn-success btn-sm mt-2"><i class="fa fa-eye"></i> View Menuscript</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Invite Reviewer Modal -->
+<div class="modal fade" id="submitEditorDecision" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header align-items-center">
+                <h6 class="fw-bold text-start m-0">Decisio for <span class="text-success m-0">MANUSCRIPT ID: JN200001</span></h6>
+                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label class="form-label">Accept or Deny</label>
+                    <select class="form-select form-select-sm mb-3" aria-label="Default select example">
+                        <option selected>Accept</option>
+                        <option value="1">Deny</option>
+                    </select>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Add comment</label>
+                        <input type="text" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('common/footer'); %>

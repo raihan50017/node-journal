@@ -1,0 +1,12 @@
+<?php
+$current_script = $_SERVER['SCRIPT_NAME'];
+?>
+
+<div class="border shadow-sm bg-white mb-3">
+    <div style="border-top:4px solid brown;"></div>
+    <a style="text-decoration: none; color:inherit" href="journal-details" class="p-2 d-block border-bottom journal-tab-item <?php if ($current_script === '/journal-details') echo 'journal-tab-item-active'; ?>">Home</a>
+    <a style="text-decoration: none; color:inherit" href="editorial-board" class="p-2 d-block border-bottom journal-tab-item <?php if ($current_script === '/editorial-board') echo 'journal-tab-item-active'; ?>">Editorial Board</a>
+    <a style="text-decoration: none; color:inherit" href="current-issue" class="p-2 d-block border-bottom journal-tab-item <?php if ($current_script === '/current-issue') echo 'journal-tab-item-active'; ?>">Curent Issue</a>
+    <a style="text-decoration: none; color:inherit" href="volume-issue" class="p-2 d-block border-bottom journal-tab-item <?php if ($current_script === '/volume-issue') echo 'journal-tab-item-active'; ?>">Volume and Issues</a>
+    <a style="text-decoration: none; color:inherit" href="contact-journal" class="p-2 d-block journal-tab-item <?php if ($current_script === '/contact-journal') echo 'journal-tab-item-active'; ?>">Contact the Journal</a>
+</div>

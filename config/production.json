@@ -1,0 +1,52 @@
+{
+  "server": {
+    "port": 8080,
+    "origin": "http://103.28.121.117:8080"
+  },
+  "jwt": {
+    "secret": "alkjsfakjfoiweaflkjsfoijalkjdflkajfjkdaskfjakdfjajkfdakjf",
+    "mailSecret": "akfjkafjadsjiedkjfkjdf",
+    "accessTokenExpiresIn": "3d"
+  },
+  "cookie": {
+    "expiresInDays": 3
+  },
+  "dbConfig": {
+    "url": "mongodb://root-jkkniu:jkkniuserver2006@103.28.121.117:27017/journal?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
+    "collections": {
+      "journals": "journals",
+      "articles": "articles",
+      "users": "users",
+      "counters": "counters"
+    }
+  },
+  "nodemailer": {
+    "gmail": {
+      "email": "rifatcsejkkniu@gmail.com",
+      "password": "xvmykixjgiadiaoj"
+    }
+  },
+  "log4js": {
+    "appenders": {
+      "out": {
+        "type": "stdout"
+      },
+      "console": {
+        "type": "console"
+      },
+      "everything": {
+        "type": "file",
+        "filename": "logs/everything.log"
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": [
+          "console",
+          "everything"
+        ],
+        "level": "debug"
+      }
+    }
+  }
+}

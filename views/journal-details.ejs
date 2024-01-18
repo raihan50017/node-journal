@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('components/includes'); %>
+        <title>journal</title>
+</head>
+
+<body>
+    <%- include('components/navbar-2'); %>
+        <%- include('components/banner'); %>
+            <!-- body -->
+            <div class="container-fluid p-4 bg-light">
+                <div class="mt-0">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="bg-white shadow-sm p-3 mb-3 d-none d-md-block">
+                                <a style="background-color: #001C54;color:white; border:1px solid #001C54; font-size: 14px;"
+                                    href="" class="btn btn-outline-success w-100 p-1 submit-to-btn">Submit to JOF</a>
+                                <a href="" style="font-size: 14px;" class="btn btn-success w-100 mt-2 p-1">Review for
+                                    JOF</a>
+                                <div class="mt-2 d-flex justify-content-between">
+                                    <a class="btn btn-outline-success py-1 px-2"><i class="icon-twitter"></i></a><a
+                                        class="btn btn-outline-success py-1 ms-1"><i class="icon-facebook"></i></a><a
+                                        style="font-size: 14px;"
+                                        class="btn btn-outline-success py-1 ms-1 w-100">Share</i></a>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block">
+                                <%- include('components/left_journal_menu_card'); %>
+                                    <%- include('components/new_anouncement_card'); %>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="px-2 py-3 bg-white shadow-sm mb-3">
+                                <div class="row">
+                                    <div class="col-md-2 col-4 text-center">
+                                        <div>
+                                            <img style="width:100%" alt="" src="static/images/Governance.png">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-8 border-left">
+                                        <h5 style="color: brown;" class="fw-bold">About the Journal
+                                        </h5>
+                                        <p class="m-0">E-ISSN: 123456 (Online)</p>
+                                        <p class="m-0 mb-2">P-ISSN: 123456 (print)</p>
+                                        <p class="d-none d-md-block" style="text-align: justify;">Facts and opinions in
+                                            articles published in the
+                                            Journal
+                                            of Governance and Development are solely the personal statements of the
+                                            respective
+                                            authors.Authors are responsible for all content in their article(s).
+                                            including
+                                            factual accuracy <a style="color: brown;" href="">Read more <i
+                                                    class="icon-arrow-right"></i></a></p>
+                                        <a class="d-block d-md-none m-0" style="color: brown;" href="">View details <i
+                                                class="icon-arrow-right"></i></a>
+                                    </div>
+                                    <div class="col-md-3 d-none d-md-block">
+                                        <div>
+                                            <h5 style="color: black;" class="fw-bold border-bottom pb-1">Metrics
+                                            </h5>
+                                            <div style="border-left:2px solid #001C54;" class="bg-light p-2 mb-1">
+                                                <p style="font-size: 20px;" class="m-0">86·208</p>
+                                                <p class="m-0">Impact Factor</p>
+                                            </div>
+                                            <div style="border-left:2px solid #001C54;" class="bg-light p-2">
+                                                <p style="font-size: 20px;" class="m-0">78·8</p>
+                                                <p class="m-0">Site Score</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="bg-white shadow-sm p-3 mb-3 d-block d-md-none">
+                                <a style="background-color: #001C54;color:white; border:1px solid #001C54; font-size: 14px;"
+                                    href="" class="btn btn-outline-success w-100 p-1 submit-to-btn">Submit to JOF</a>
+                                <a href="" style="font-size: 14px;" class="btn btn-success w-100 mt-2 p-1">Review for
+                                    JOF</a>
+                                <div class="mt-2 d-flex justify-content-between">
+                                    <a class="btn btn-outline-success py-1 px-2"><i class="icon-twitter"></i></a><a
+                                        class="btn btn-outline-success py-1 ms-1"><i class="icon-facebook"></i></a><a
+                                        style="font-size: 14px;"
+                                        class="btn btn-outline-success py-1 ms-1 w-100">Share</i></a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="mt-3 bg-light">
+                                    <div class="home-article-container bg-white">
+                                        <ul class="nav nav-pills mb-2 w-100 border-bottom" id="pills-tab"
+                                            role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link fw-500 w-100 active rounded-0"
+                                                    id="pills-home-tab" data-bs-toggle="pill"
+                                                    data-bs-target="#FeaturedArticles" type="button" role="tab"
+                                                    aria-controls="pills-home" aria-selected="true">Featured
+                                                    Articles</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link fw-500 w-100 rounded-0" id="pills-profile-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#Highlyaccessed" type="button"
+                                                    role="tab" aria-controls="pills-profile"
+                                                    aria-selected="false">Highly
+                                                    accessed</button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="FeaturedArticles" role="tabpanel"
+                                                aria-labelledby="pills-home-tab">
+                                                <div class="row row-cols-1 row-cols-md-1 g-1">
+                                                    <div class="col">
+                                                        <div style="border-radius: 0; border:0px solid red;"
+                                                            class="card h-100 card-hover shadow-sm">
+                                                            <div class="card-body">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-md-9">
+                                                                        <span
+                                                                            style="background-color: #001c54; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700"><i class="icon-unlock"></i>
+                                                                            Open
+                                                                            Access</span>
+                                                                        <span
+                                                                            style="background-color: gray; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700">Research Article</span>
+                                                                        <span
+                                                                            style="background-color: white; color:black; font-size:14px;padding:2px;"
+                                                                            class="fw-700 bg-light">November
+                                                                            2022</span>
+                                                                        <h5 style="color: brown;"
+                                                                            class="card-title fs-6 fw-bold mt-2"> <a
+                                                                                class="article-card-heading"
+                                                                                style="color: inherit;"
+                                                                                href="article-details">Magnetic
+                                                                                mitohormesis: A non-invasive therapy for
+                                                                                inflammatory disorders?</a></h5>
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-none d-block"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman, <a href="">+2</a>
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-block d-none"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman,
+                                                                            <i class="icon-user-circle"></i>
+                                                                            Gazi Arafat
+                                                                            Uz-Zaman Markony, <i
+                                                                                class="icon-user-circle"></i>
+                                                                            Tanjil Ahmed
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); font-size: 14px;"
+                                                                            class="m-0 d-md-block d-none">BIOCELL,
+                                                                            Vol.47, No.2, pp.
+                                                                            239-244,
+                                                                            2023, DOI:10.32604/biocell.2023.025357</p>
+                                                                        <p style="text-align: justify;"
+                                                                            class="p-0 m-0 d-md-block d-none">
+                                                                            <a href="">Abstract</a> An organism’s
+                                                                            survival
+                                                                            depends on its ability to adapt to stress.
+                                                                            Mitochondria are the cellular integrators of
+                                                                            environmental stressors that ultimately
+                                                                            translate
+                                                                            their responses at the organismal level, and
+                                                                            are
+                                                                            thus central to the process whereby
+                                                                            organisms adapt
+                                                                            to their respective environments.
+                                                                            Mitochondria
+                                                                            produce molecular energy via oxidative <span
+                                                                                style="color: brown;"><a
+                                                                                    style="color:inherit;" href=""> more
+                                                                                    <i
+                                                                                        class="icon-arrow-right"></i></a></span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-md-3 border d-md-block d-none">
+                                                                        <img style="width:100%" class="w-100"
+                                                                            src="https://file.techscience.com/uploads/imgs/202211/6abebd95d75894d3313b6f290a208fd2.png/origin?t=20220620">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-footer bg-white d-md-block d-none">
+                                                                <i class="icon-eye"></i><span> View</span><span
+                                                                    style="color: brown;"> 100</span><i
+                                                                    class="icon-download ms-3"></i><span>
+                                                                    Download</span><span style="color: brown;">
+                                                                    50</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div style="border-radius: 0; border:0px solid red;"
+                                                            class="card h-100 card-hover shadow-sm">
+                                                            <div class="card-body">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-md-9">
+                                                                        <span
+                                                                            style="background-color: #001c54; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700"><i class="icon-unlock"></i>
+                                                                            Open
+                                                                            Access</span>
+                                                                        <span
+                                                                            style="background-color: gray; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700">Research Article</span>
+                                                                        <span
+                                                                            style="background-color: white; color:black; font-size:14px;padding:2px;"
+                                                                            class="fw-700 bg-light">November
+                                                                            2022</span>
+                                                                        <h5 style="color: brown;"
+                                                                            class="card-title fs-6 fw-bold mt-2"> <a
+                                                                                class="article-card-heading"
+                                                                                style="color: inherit;"
+                                                                                href="article-details">Magnetic
+                                                                                mitohormesis: A non-invasive therapy for
+                                                                                inflammatory disorders?</a></h5>
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-none d-block"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman, <a href="">+2</a>
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-block d-none"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman,
+                                                                            <i class="icon-user-circle"></i>
+                                                                            Gazi Arafat
+                                                                            Uz-Zaman Markony, <i
+                                                                                class="icon-user-circle"></i>
+                                                                            Tanjil Ahmed
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); font-size: 14px;"
+                                                                            class="m-0 d-md-block d-none">BIOCELL,
+                                                                            Vol.47, No.2, pp.
+                                                                            239-244,
+                                                                            2023, DOI:10.32604/biocell.2023.025357</p>
+                                                                        <p style="text-align: justify;"
+                                                                            class="p-0 m-0 d-md-block d-none">
+                                                                            <a href="">Abstract</a> An organism’s
+                                                                            survival
+                                                                            depends on its ability to adapt to stress.
+                                                                            Mitochondria are the cellular integrators of
+                                                                            environmental stressors that ultimately
+                                                                            translate
+                                                                            their responses at the organismal level, and
+                                                                            are
+                                                                            thus central to the process whereby
+                                                                            organisms adapt
+                                                                            to their respective environments.
+                                                                            Mitochondria
+                                                                            produce molecular energy via oxidative <span
+                                                                                style="color: brown;"><a
+                                                                                    style="color:inherit;" href=""> more
+                                                                                    <i
+                                                                                        class="icon-arrow-right"></i></a></span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-md-3 border d-md-block d-none">
+                                                                        <img style="width:100%" class="w-100"
+                                                                            src="https://file.techscience.com/uploads/imgs/202211/6abebd95d75894d3313b6f290a208fd2.png/origin?t=20220620">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-footer bg-white d-md-block d-none">
+                                                                <i class="icon-eye"></i><span> View</span><span
+                                                                    style="color: brown;"> 100</span><i
+                                                                    class="icon-download ms-3"></i><span>
+                                                                    Download</span><span style="color: brown;">
+                                                                    50</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="Highlyaccessed" role="tabpanel"
+                                                aria-labelledby="pills-profile-tab">
+                                                <div class="row row-cols-1 row-cols-md-1 g-1">
+                                                    <div class="col">
+                                                        <div style="border-radius: 0; border:0px solid red;"
+                                                            class="card h-100 card-hover shadow-sm">
+                                                            <div class="card-body">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-md-9">
+                                                                        <span
+                                                                            style="background-color: #001c54; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700"><i class="icon-unlock"></i>
+                                                                            Open
+                                                                            Access</span>
+                                                                        <span
+                                                                            style="background-color: gray; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700">Research Article</span>
+                                                                        <span
+                                                                            style="background-color: white; color:black; font-size:14px;padding:2px;"
+                                                                            class="fw-700 bg-light">November
+                                                                            2022</span>
+                                                                        <h5 style="color: brown;"
+                                                                            class="card-title fs-6 fw-bold mt-2"> <a
+                                                                                class="article-card-heading"
+                                                                                style="color: inherit;"
+                                                                                href="article-details">Magnetic
+                                                                                mitohormesis: A non-invasive therapy for
+                                                                                inflammatory disorders?</a></h5>
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-none d-block"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman, <a href="">+2</a>
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-block d-none"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman,
+                                                                            <i class="icon-user-circle"></i>
+                                                                            Gazi Arafat
+                                                                            Uz-Zaman Markony, <i
+                                                                                class="icon-user-circle"></i>
+                                                                            Tanjil Ahmed
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); font-size: 14px;"
+                                                                            class="m-0 d-md-block d-none">BIOCELL,
+                                                                            Vol.47, No.2, pp.
+                                                                            239-244,
+                                                                            2023, DOI:10.32604/biocell.2023.025357</p>
+                                                                        <p style="text-align: justify;"
+                                                                            class="p-0 m-0 d-md-block d-none">
+                                                                            <a href="">Abstract</a> An organism’s
+                                                                            survival
+                                                                            depends on its ability to adapt to stress.
+                                                                            Mitochondria are the cellular integrators of
+                                                                            environmental stressors that ultimately
+                                                                            translate
+                                                                            their responses at the organismal level, and
+                                                                            are
+                                                                            thus central to the process whereby
+                                                                            organisms adapt
+                                                                            to their respective environments.
+                                                                            Mitochondria
+                                                                            produce molecular energy via oxidative <span
+                                                                                style="color: brown;"><a
+                                                                                    style="color:inherit;" href=""> more
+                                                                                    <i
+                                                                                        class="icon-arrow-right"></i></a></span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-md-3 border d-md-block d-none">
+                                                                        <img style="width:100%" class="w-100"
+                                                                            src="https://file.techscience.com/uploads/imgs/202211/6abebd95d75894d3313b6f290a208fd2.png/origin?t=20220620">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-footer bg-white d-md-block d-none">
+                                                                <i class="icon-eye"></i><span> View</span><span
+                                                                    style="color: brown;"> 100</span><i
+                                                                    class="icon-download ms-3"></i><span>
+                                                                    Download</span><span style="color: brown;">
+                                                                    50</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div style="border-radius: 0; border:0px solid red;"
+                                                            class="card h-100 card-hover shadow-sm">
+                                                            <div class="card-body">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-md-9">
+                                                                        <span
+                                                                            style="background-color: #001c54; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700"><i class="icon-unlock"></i>
+                                                                            Open
+                                                                            Access</span>
+                                                                        <span
+                                                                            style="background-color: gray; color:white; font-size:14px;padding:2px;"
+                                                                            class="fw-700">Research Article</span>
+                                                                        <span
+                                                                            style="background-color: white; color:black; font-size:14px;padding:2px;"
+                                                                            class="fw-700 bg-light">November
+                                                                            2022</span>
+                                                                        <h5 style="color: brown;"
+                                                                            class="card-title fs-6 fw-bold mt-2"> <a
+                                                                                class="article-card-heading"
+                                                                                style="color: inherit;"
+                                                                                href="article-details">Magnetic
+                                                                                mitohormesis: A non-invasive therapy for
+                                                                                inflammatory disorders?</a></h5>
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-none d-block"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman, <a href="">+2</a>
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); text-transform:uppercase;font-size: 14px;"
+                                                                            class="pt-1 pb-1 m-0 d-md-block d-none"><i
+                                                                                class="icon-user-circle"></i> Azizur
+                                                                            Rahman,
+                                                                            <i class="icon-user-circle"></i>
+                                                                            Gazi Arafat
+                                                                            Uz-Zaman Markony, <i
+                                                                                class="icon-user-circle"></i>
+                                                                            Tanjil Ahmed
+                                                                        </p>
+
+                                                                        <p style="color: rgba(0,0,0,.8); font-size: 14px;"
+                                                                            class="m-0 d-md-block d-none">BIOCELL,
+                                                                            Vol.47, No.2, pp.
+                                                                            239-244,
+                                                                            2023, DOI:10.32604/biocell.2023.025357</p>
+                                                                        <p style="text-align: justify;"
+                                                                            class="p-0 m-0 d-md-block d-none">
+                                                                            <a href="">Abstract</a> An organism’s
+                                                                            survival
+                                                                            depends on its ability to adapt to stress.
+                                                                            Mitochondria are the cellular integrators of
+                                                                            environmental stressors that ultimately
+                                                                            translate
+                                                                            their responses at the organismal level, and
+                                                                            are
+                                                                            thus central to the process whereby
+                                                                            organisms adapt
+                                                                            to their respective environments.
+                                                                            Mitochondria
+                                                                            produce molecular energy via oxidative <span
+                                                                                style="color: brown;"><a
+                                                                                    style="color:inherit;" href=""> more
+                                                                                    <i
+                                                                                        class="icon-arrow-right"></i></a></span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-md-3 border d-md-block d-none">
+                                                                        <img style="width:100%" class="w-100"
+                                                                            src="https://file.techscience.com/uploads/imgs/202211/6abebd95d75894d3313b6f290a208fd2.png/origin?t=20220620">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-footer bg-white d-md-block d-none">
+                                                                <i class="icon-eye"></i><span> View</span><span
+                                                                    style="color: brown;"> 100</span><i
+                                                                    class="icon-download ms-3"></i><span>
+                                                                    Download</span><span style="color: brown;">
+                                                                    50</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('components/footer'); %>
+</body>
+
+</html>

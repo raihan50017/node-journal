@@ -1,0 +1,139 @@
+<div style="margin-top: 90px;" class="p-2">
+    <div class="row">
+        <div style="position:fixed; left:0;width:20%" class="d-none d-md-block">
+
+            <!-- AUTHOR -->
+
+            <% if (authRole==roles.author) { %>
+                <div class="bg-white p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">New Submission</a>
+                    <a href="/v1/dashboard/submit_new_menuscript"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submit New Menuscript</a>
+                    <a href="/v1/dashboard/incomplete_menuscript"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Incomplete Submission <span
+                            class="text-danger">(<%= incompleteMenuscript %>)</span></a>
+                    <a href="/v1/dashboard/author_submission_under_review"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission Under Review
+                        (<%= completeMenuscript %>)</a>
+                </div>
+                <div class="bg-white mt-2 p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Revision</a>
+                    <a href="/v1/dashboard/author_revision_needed"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Revision needed <span
+                            class="text-danger">(<%= revisionNeeded %>)</span></a>
+                    <a href="/v1/dashboard/author_revision_being_processed"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Revision Being Processed
+                        (<%= revisionBeingProcessed %>)</a>
+                    <a class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Final Decisions (0)</a>
+                </div>
+                <div class="bg-white mt-2 p-0 shadow-sm">
+                    <a style="background-color: #2E75B5; color:white"
+                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Previous Submissions</a>
+                    <a href="/v1/dashboard/author_submission_under_review"
+                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Previous Submission <span
+                            class="text-danger">(<%= completeMenuscript %>)</span></a>
+                </div>
+
+                <% } %>
+
+                    <!-- REVIEWER -->
+
+                    <% if (authRole==roles.reviewer) { %>
+
+                        <div class="bg-white p-0 shadow-sm">
+                            <a style="background-color: #2E75B5; color:white"
+                                class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Review Assignments</a>
+                            <a href="/v1/dashboard/new_reviewer_invitation"
+                                class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">New Reviewer
+                                Inviations
+                                <span class="text-danger">(<%= reviewerStat.newInvitation %>)</span></a>
+                            <a href="/v1/dashboard/reviewer_pending_assignments"
+                                class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Pending Assignments
+                                <span class="text-danger">(<%= reviewerStat.pendingAssignment %>)</span></a>
+                        </div>
+                        <div class="bg-white mt-2 p-0 shadow-sm">
+                            <a style="background-color: #2E75B5; color:white"
+                                class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Statistics</a>
+                            <a href="/v1/dashboard/reviewer_completed_assignment"
+                                class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Completed Assignments
+                                <span class="text-success">(<%= reviewerStat.completedAssignment %>)</span></a>
+                        </div>
+
+                        <% } %>
+
+                            <!-- EDITOR -->
+
+
+                            <% if (authRole==roles.editor || authRole==roles.cheifeditor) { %>
+
+                                <div class="bg-white p-0 shadow-sm">
+                                    <a style="background-color: #2E75B5; color:white"
+                                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Pending
+                                        Assignments
+                                        (10)</a>
+                                    <% if (authRole==roles.cheifeditor) { %>
+                                        <a href="/v1/dashboard/chiefeditor-unassigned-assignments"
+                                            class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">New
+                                            unassigned
+                                            Submissions
+                                            (<%= editorStat.unAssignedSubmission %>)</a>
+                                        <% } %>
+                                            <a href="/v1/dashboard/editor-new-assignments"
+                                                class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">New
+                                                Submissions
+                                                (<%= editorStat.newSubmission %>)</a>
+                                            <a href="/v1/dashboard/editor_required_review_completed"
+                                                class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Required
+                                                Review
+                                                Completed
+                                                <span class="text-danger">(0)</span></a>
+                                            <a href="/v1/dashboard/editor_require_additional_reviewer"
+                                                class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Require
+                                                Additional
+                                                Reviewer
+                                                (0)</a>
+                                            <a href="/v1/dashboard/editor_submission_with_late_review"
+                                                class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission
+                                                With
+                                                Late
+                                                Review <span class="text-success">(0)</span></a>
+                                </div>
+                                <div class="bg-white mt-2 p-0 shadow-sm">
+                                    <a style="background-color: #2E75B5; color:white"
+                                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">Review
+                                        in
+                                        Progress(0)</a>
+                                    <a href="/v1/dashboard/editor_reviewer_no_response"
+                                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Reviewer
+                                        no
+                                        Response
+                                        <span class="text-danger">(0)</span></a>
+                                    <a href="/v1/dashboard/editor_submission_under_review"
+                                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission
+                                        Under
+                                        Review
+                                        (0)</a>
+                                </div>
+                                <div class="bg-white mt-2 p-0 shadow-sm">
+                                    <a style="background-color: #2E75B5; color:white"
+                                        class="m-0 d-block p-2 fw-bold border-top journal-sidebar-item">All
+                                        Assigned
+                                        Submissions(0)</a>
+                                    <a href="/v1/dashboard/editor_all_assigned_submission"
+                                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">All
+                                        Assigned
+                                        Submission
+                                        <span class="text-danger">(0)</span></a>
+                                    <a href="/v1/dashboard/editor_submission_being_edited"
+                                        class="m-0 d-block ps-2 pe-2 py-2 border-top journal-sidebar-item">Submission
+                                        Being
+                                        Edited
+                                        <span class="text-danger">(0)</span></a>
+                                </div>
+
+                                <% } %>
+        </div>
+        <div style="width: 20%;" class="col-12"></div>
+        <div class="right-panel">

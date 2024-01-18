@@ -1,0 +1,38 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+        <div class="bg-white shadow-sm p-2">
+            <p class="p-0 py-1 m-0 fw-bold">Submissions Under Review</p>
+            <div class="d-flex justify-content-between bg-light m-0">
+                <p class="p-2 m-0">Page: 1 of 1 (Total submissions : 2)</p>
+                <p class="p-2 m-0">Display 10 per page</p>
+            </div>
+            <div class="table-responsive">
+                <table class="w-100 custom-table">
+                    <thead>
+                        <tr>
+                            <td class="custom-table-head p-2">Action</td>
+                            <td class="custom-table-head p-2 border-start">Menuscript Id</td>
+                            <td style="width: 50%;" class="text-center custom-table-head p-2 border-start">Title</td>
+                            <td class="text-center custom-table-head p-2 border-start">Submission Date</td>
+                            <td class="text-center custom-table-head p-2 border-start">Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% articles.forEach(function(article) { %>
+                            <tr>
+                                <td>
+                                    <a href="" class="p-2 w-100 d-block border-bottom" href="">View Submission</a>
+                                    <a href="" class="p-2 w-100 d-block" href="">Send Email</a>
+                                </td>
+                                <td class="border-start p-2 text-center"><%= article.manuscript_id %></td>
+                                <td class="border-start p-2"><%= article.article_title %></td>
+                                <td class="p-2 border-start text-center"><%= article.initial_submission_date %></td>
+                                <td class="p-2 border-start text-center">Under review</td>
+                            </tr>
+
+                            <% });%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <%- include('common/footer'); %>

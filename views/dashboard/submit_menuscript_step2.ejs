@@ -1,0 +1,559 @@
+<%- include('common/header'); %>
+    <%- include('common/left_sidebar'); %>
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div style="border-radius: 0px;" class="card">
+                    <div style="border-radius: 0px;" class="card-header text-left">
+                        <h6 class="fw-bold m-0 py-1">New Menuscript Submission</h6>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="d-flex border-bottom mb-3 pb-2">
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-50"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">1</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Menuscript Information</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-100"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:green; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">2</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Author Information</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-100"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">3</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Suggest Reviewers</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-100"
+                                        style="position:absolute; top:15px; border-top:2px solid green;right:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">4</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Upload Files</p>
+                                </div>
+                            </div>
+
+                            <div style="width: 20%;">
+                                <div style="position: relative;"
+                                    class="d-flex justify-content-center flex-column align-items-center">
+                                    <div class="w-50"
+                                        style="position:absolute; top:15px; border-top:2px solid green;left:0;z-index:1;">
+                                    </div>
+                                    <div style="z-index: 2;">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            style="width:34px; height:34px;background-color:gray; border-radius:50%;color:white;">
+                                            <p class="m-0 p-0 fw-bold">5</p>
+                                        </div>
+                                    </div>
+                                    <p class="d-none d-md-block">Confirmation</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- form start -->
+                        <form action="/v1/dashboard/submit_menuscript_step2?article_id=<%= article._id %>" method="post">
+                            <div>
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header p-0" id="headingOne">
+                                            <button class="accordion-button py-2" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                Author #1
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div>
+                                                    <table style="white-space: nowrap;" class="w-100 d-none d-md-block">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="pe-2">
+                                                                    <label for="exampleInputEmail1">Author Name</label>
+                                                                </td>
+                                                                <td class="w-100">
+                                                                    <input name="author_name1" type="text"
+                                                                        class="form-control form-control-sm"
+                                                                        id="exampleInputEmail1"
+                                                                        placeholder="Author name">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="p-1"></td>
+                                                                <td class="p-1"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="pe-2">
+                                                                    <label for="exampleInputEmail1">Email</label>
+                                                                </td>
+                                                                <td class="w-100">
+                                                                    <input name="email1" type="text"
+                                                                        class="form-control form-control-sm"
+                                                                        id="exampleInputEmail1" placeholder="Email">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="p-1"></td>
+                                                                <td class="p-1"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="pe-2">
+                                                                    <label for="exampleInputEmail1">Affiliation</label>
+                                                                </td>
+                                                                <td class="w-100">
+                                                                    <input name="affiliation1" type="text"
+                                                                        class="form-control form-control-sm"
+                                                                        id="exampleInputEmail1"
+                                                                        placeholder="Affiliation">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="d-md-none d-block">
+                                                        <div class="form-group mb-2">
+                                                            <label for="">Author Name
+                                                            </label>
+                                                            <input name="" type="text"
+                                                                class="form-control form-control-sm"
+                                                                id="exampleInputEmail1" placeholder="full name">
+                                                        </div>
+                                                        <div class="form-group mb-2">
+                                                            <label for="">Email
+                                                            </label>
+                                                            <input name="" type="email"
+                                                                class="form-control form-control-sm"
+                                                                id="exampleInputEmail1" placeholder="email address">
+                                                        </div>
+                                                        <div class="form-group mb-2">
+                                                            <label for="">Affiliation
+                                                            </label>
+                                                            <input name="" type="text"
+                                                                class="form-control form-control-sm"
+                                                                id="exampleInputEmail1" placeholder="affiliation">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header  p-0" id="headingTwo">
+                                                <button class="accordion-button collapsed px-2.5 py-2" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    Author #2
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div>
+                                                        <table style="white-space: nowrap;"
+                                                            class="w-100 d-none d-md-block">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Author
+                                                                            Name</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="author_name2" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Author name">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Email</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="email2" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1" placeholder="Email">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label
+                                                                            for="exampleInputEmail1">Affiliation</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="affiliation2" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Affiliation">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="d-md-none d-block">
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Author Name
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="full name">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Email
+                                                                </label>
+                                                                <input  type="email"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="email address">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Affiliation
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="affiliation">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header  p-0" id="headingThree">
+                                                <button class="accordion-button collapsed px-2.5 py-2" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                    Author #3
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div>
+                                                        <table style="white-space: nowrap;"
+                                                            class="w-100 d-none d-md-block">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Author
+                                                                            Name</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="author_name3" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Author name">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Email</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="email3" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1" placeholder="Email">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label
+                                                                            for="exampleInputEmail1">Affiliation</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="affiliation3" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Affiliation">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="d-md-none d-block">
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Author Name
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="full name">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Email
+                                                                </label>
+                                                                <input  type="email"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="email address">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Affiliation
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="affiliation">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button collapsed px-2.5 py-2" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                    aria-expanded="false" aria-controls="collapseFour">
+                                                    Author #4
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse"
+                                                aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div>
+                                                        <table style="white-space: nowrap;"
+                                                            class="w-100 d-none d-md-block">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Author
+                                                                            Name</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="author_name4" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Author name">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Email</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="email4" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1" placeholder="Email">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label
+                                                                            for="exampleInputEmail1">Affiliation</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="affiliation4" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Affiliation">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="d-md-none d-block">
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Author Name
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="full name">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Email
+                                                                </label>
+                                                                <input  type="email"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="email address">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Affiliation
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="affiliation">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header  p-0" id="headingFive">
+                                                <button class="accordion-button collapsed px-2.5 py-2" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                    aria-expanded="false" aria-controls="collapseFive">
+                                                    Author #5
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFive" class="accordion-collapse collapse"
+                                                aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div>
+                                                        <table style="white-space: nowrap;"
+                                                            class="w-100 d-none d-md-block">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Author
+                                                                            Name</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="author_name5" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Author name">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label for="exampleInputEmail1">Email</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="email5" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1" placeholder="Email">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1"></td>
+                                                                    <td class="p-1"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pe-2">
+                                                                        <label
+                                                                            for="exampleInputEmail1">Affiliation</label>
+                                                                    </td>
+                                                                    <td class="w-100">
+                                                                        <input name="affiliation5" type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            id="exampleInputEmail1"
+                                                                            placeholder="Affiliation">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="d-md-none d-block">
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Author Name
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="full name">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Email
+                                                                </label>
+                                                                <input  type="email"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="email address">
+                                                            </div>
+                                                            <div class="form-group mb-2">
+                                                                <label for="">Affiliation
+                                                                </label>
+                                                                <input  type="text"
+                                                                    class="form-control form-control-sm"
+                                                                    id="exampleInputEmail1" placeholder="affiliation">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="border-bottom text-center d-flex align-items-center py-2 px-3 mt-2">
+                                        <label class="m-0 fw-bold">Corresponding Author
+                                        </label>
+                                        <div class="form-group d-flex align-items-center ms-3">
+                                            <div class="custom-control custom-radio">
+                                                <input class="custom-control-input" type="radio" id="customRadio1"
+                                                    name="customRadio">
+                                                <label for="customRadio1" class="custom-control-label">Yes</label>
+                                            </div>
+                                            <div class="custom-control custom-radio ms-2">
+                                                <input class="custom-control-input" type="radio" id="customRadio2"
+                                                    name="customRadio">
+                                                <label for="customRadio2" class="custom-control-label">No</label>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer w-100">
+                                    <a href="submit_new_menuscript?article_id=<%= article._id %>" type="submit"
+                                        class="btn btn-primary btn-sm"><i class="fa fa-angle-double-left"></i> Previous
+                                        step</a>
+                                    <button type="submit"
+                                        class="btn btn-primary btn-sm ms-1">Proceed to next step <i
+                                            class="fa fa-angle-double-right"></i></button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.card -->
+                <!--/.col (right) -->
+            </div>
+        </div>
+        <%- include('common/footer'); %>
